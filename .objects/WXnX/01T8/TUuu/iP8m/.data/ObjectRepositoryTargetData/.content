@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="8i-doYEfy0W1Txwida4tKg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="439704a0-a158-42b1-adf9-24a3191a9cd7" CvElementArea="851, 539, 239, 50" CvType="InputBox" DesignTimeRectangle="853, 541, 236, 46" DesignTimeScaleFactor="1.125" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='numeroSerie' tag='INPUT' type='text' class='form-control valid' placeholder='No. Serie' aaname='' /&gt;" Guid="4db38c83-d85a-4090-9f72-2defa8c87ccd" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="458149300195e4d40af6a7b4b32468b0.png" xmlns="">0YBp9c5KmjU6MNEDFyik_1g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

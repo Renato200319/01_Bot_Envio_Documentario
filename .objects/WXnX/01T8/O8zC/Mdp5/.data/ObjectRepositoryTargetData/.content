@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4jB71Z11-kq5nunKSf_Llw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="79663aed-259c-4d0d-a97c-b7e8e8aa556c" DesignTimeRectangle="77, 353, 155, 15" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Comprobantes Emitidos' tag='SPAN' type='' class='' check:innerText='Comprobantes Emitidos' /&gt;" Guid="0692eb55-8bbf-4bac-8972-8cbd36db6dc2" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2239d34cca98577da96237ecc05b6dd7.png" xmlns="">0pBzsFdqjdEWPcETXIKapTw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

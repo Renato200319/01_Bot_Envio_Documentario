@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Comprobantes Emitidos",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Mdp5b98Takqau5LjjQ8W_w",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/Mdp5b98Takqau5LjjQ8W_w",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/O8zClEYfwkKgUYZzXUlQrg",
+  "Created": "2025-05-07T19:09:11.0356876Z",
+  "Updated": "2025-05-07T19:09:11.0356876Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

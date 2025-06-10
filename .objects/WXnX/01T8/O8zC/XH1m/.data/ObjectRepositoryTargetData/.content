@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Sqt2o7RuO0KU8hVb9DPeJw" Reference="dHlVBlqNnU63xQsMqdfbMw/XH1mi8Ju1kmADaZGzaFJSQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="22da265a-2e5e-4c56-beb3-1286376dff2e" DesignTimeRectangle="986, 655, 32, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' aaname='{0}' check:text='{0}' /&gt;&quot;, v_dia)]" Guid="b0a3a2cd-99b2-4f4a-b0f0-6b02bc1fec05" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="39097860dd2477874474e30e23157ffd.png" xmlns="">0elbIMYas3026AUu9MQTfKA</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="v_dia" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

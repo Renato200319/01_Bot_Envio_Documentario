@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KTL0QvNtaU2diprT7MX2Zg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="42742c9b-e77a-4a08-a784-66ecf7e37c71" DesignTimeRectangle="677, 665, 224, 59" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='numeroSerie' tag='INPUT' /&gt;" Guid="cc912184-2aeb-4d86-a91d-c6747ceed798" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="69b1d95b-cbb3-44e3-be1f-3efc16c3fb42" DesignTimeRectangle="446, 476, 1402, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl class='panel-title' tag='H4' /&gt;" Guid="c91e6b3a-aba3-4c39-b852-7193c16e0f32" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c8efc603313b932f101cc0250676fcce.png" xmlns="">0E9cMFFeT9kyq6UkS1gbh0A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

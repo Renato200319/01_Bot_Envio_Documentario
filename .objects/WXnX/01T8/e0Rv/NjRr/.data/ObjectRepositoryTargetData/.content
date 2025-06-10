@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Jw5ENJT7EUmg1JscRVpxhw" Reference="dHlVBlqNnU63xQsMqdfbMw/NjRrT3tzTEm-mIPfXt6uCQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="380cd099-ce8e-4998-bb4d-dfe366b830e0" CvElementArea="873, 656, 34, 35" CvType="CheckBox" DesignTimeRectangle="874, 657, 31, 31" DesignTimeScaleFactor="1.125" FuzzySelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' type='' class='recaptcha-checkbox-border' aaname='' /&gt;" Guid="c23d066d-0dce-48e5-9d8a-f3899d47f992" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="de7ab9381c73af5cb09119a2371e50de.png" xmlns="">0pVGEbsgE0U6glBLOJGkslw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

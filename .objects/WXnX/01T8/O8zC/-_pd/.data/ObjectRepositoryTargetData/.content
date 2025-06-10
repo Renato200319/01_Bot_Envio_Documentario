@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xHl4pOe5QEmaN4Lz0iU-gw" Reference="dHlVBlqNnU63xQsMqdfbMw/-_pdNl1Al0euQuQ8OWC__A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="68806737-cf2e-4ee9-88b7-79db12abec4b" CvTextArea="612, 728, 28, 15" CvTextArgument="[v_mesAntes]" CvType="Text" DesignTimeRectangle="612, 727, 27, 16" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_mesAntes)]" Guid="71e11732-690f-4986-a898-67c05506c781" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b137e4faace7913127a0688a8ddc11ca.png" xmlns="">0UH37oL2RUE2MLOTvx2oh3A</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="v_mesAntes" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

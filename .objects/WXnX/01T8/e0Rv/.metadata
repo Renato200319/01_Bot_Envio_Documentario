@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Todas Mis Facturas",
+  "Type": "Screen",
+  "Id": "e0Rv5_jqaUevntjG0YKXJQ",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/e0Rv5_jqaUevntjG0YKXJQ",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/01T8IUpKokisyxDBOnWqEA",
+  "Created": "2025-04-24T22:17:16.6276977Z",
+  "Updated": "2025-04-24T22:17:16.6276977Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dAweB0D8iUaQStkoqOFn7A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="fdc9a693-d040-4925-8b5e-ac50a52c4d1f" CvElementArea="1353, 824, 86, 44" CvTextArea="1373, 837, 48, 15" CvTextArgument="Cerrar" CvType="Button" DesignTimeRectangle="1356, 827, 82, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Cerrar' parentid='myModal' tag='BUTTON' type='button' /&gt;" Guid="37626b7f-91af-454d-9c4f-e7b46ff99cfe" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ac4a142f8024dd0723b1c7c95a3028a6.png" xmlns="">0ZDlHicwiEkeilM12ELDnnw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

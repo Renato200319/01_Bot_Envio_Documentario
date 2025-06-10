@@ -1,0 +1,1019 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>818.4,454.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="940.6666666666666,15533.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="v_docPDF" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docXML" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docCDR" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docNE" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docOC" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docVALE" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docACTA" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docArchivoExcel" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docGR" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_docMIGO" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_SinFactura" />
+      <Variable x:TypeArguments="x:String" Name="v_rutaDoc" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_GRdocPDF" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_GRdocXML" />
+      <Variable x:TypeArguments="x:Int32" Name="v_NoPosicionExcel" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="566,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:IfElseIfV2 Condition="[in_TransactionItem.SpecificContent(&quot;Procesado&quot;).ToString.Contains(&quot;x&quot;)]" DisplayName="Fue procesado?" sap:VirtualizedContainerService.HintSize="566,15087.333333333334" sap2010:WorkflowViewState.IdRef="IfElseIfV2_15">
+      <ui:IfElseIfV2.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="564,13610" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Se creara la carpeta del cliente&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Crear_Carpeta_Cliente - Invoke Workflow File (Data\Input\Crear_Carpeta_Cliente.xaml)" sap:VirtualizedContainerService.HintSize="530,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" UnSafe="False" WorkflowFileName="Data\Input\Crear_Carpeta_Cliente.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_rutaFacturas">[in_Config("RutaCarp_Factura").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_fecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_rutaDoc">[v_rutaDoc]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_NPedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="0.3_Encontrar_Transacción_Excel - Invoke Workflow File (Data\Input\0.3_Encontrar_Transacción_Excel.xaml)" sap:VirtualizedContainerService.HintSize="530,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Data\Input\0.3_Encontrar_Transacción_Excel.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Pedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_NoPosición">[v_NoPosicionExcel]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Obtener solicitudes documentarios del cliente&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_Obtener_requerimientos - Invoke Workflow File (Data\Temp\1_Obtener_requerimientos.xaml)" sap:VirtualizedContainerService.HintSize="530,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" UnSafe="False" WorkflowFileName="Data\Temp\1_Obtener_requerimientos.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_ItemTransaccion">[in_TransactionItem]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docPDF">[v_docPDF]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docXML">[v_docXML]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docCDR">[v_docCDR]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docNE">[v_docNE]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docOC">[v_docOC]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docVALE">[v_docVALE]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docACTA">[v_docACTA]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docArchivoExcel">[v_docArchivoExcel]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docGR">[v_docGR]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docMIGO">[v_docMIGO]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_GRdocPDF">[v_GRdocPDF]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_GRdocXML">[v_GRdocXML]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Se descargara las Facturas para el cliente: &quot;+ in_TransactionItem.SpecificContent(&quot;Razon Social&quot;).ToString]" />
+          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="530,1274" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="1">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="2_Obtener_Factura_Carbajal - Invoke Workflow File (Data\Output\2_Obtener_Factura_PDF.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:20:00" UnSafe="False" WorkflowFileName="Data\Output\2_Obtener_Factura_Carbajal.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_itemCola">[in_TransactionItem]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="out_SinFactura">[v_SinFactura]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_rutaDocumento">[v_rutaDoc]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_PDF">[v_docPDF]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_XML">[v_docXML]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_CDR">[v_docCDR]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_rutaFactura">[in_Config("RutaCarp_Factura").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_rutaFecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NPedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_NEncontrar">[v_NoPosicionExcel]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_8" ProcessName="EXCEL" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta la FACTURA o que no se encontro el documento descargado&quot;]" />
+                            <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el FACTURA o que no se encontro el archivo que descargo&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                    <TryCatch.Finally>
+                      <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </TryCatch.Finally>
+                  </TryCatch>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+          <ui:IfElseIfV2 Condition="[v_docNE]" DisplayName="Requiere NE" sap:VirtualizedContainerService.HintSize="530,1603.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_14">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinNotaEntrega" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="3_Obtener_NE - Invoke Workflow File (Data\Output\3_Obtener_NE.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:10:00" UnSafe="False" WorkflowFileName="Data\Output\3_Obtener_NE.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:Object" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaFactura">[in_Config("RutaCarp_Factura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaFecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaPedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinNotaEntrega">[v_SinNotaEntrega]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="In_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_CodigoEntrega">[in_TransactionItem.SpecificContent("No Entrega").ToString.PadLeft(10, "0"c)]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NoCeldaExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_7" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+          <ui:IfElseIfV2 Condition="[v_docGR]" DisplayName="Requiere GRE" sap:VirtualizedContainerService.HintSize="530,1603.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_7">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinGR" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="4_Obtener_GRE - Invoke Workflow File (Data\Output\4_Obtener_GRE.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:10:00" UnSafe="False" WorkflowFileName="Data\Output\4_Obtener_GRE.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaPDF">[in_Config("RutaCarp_Factura").ToString+in_TransactionItem.SpecificContent("Razon Social").ToString+"\"+DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")+"\"+in_TransactionItem.SpecificContent("No Pedido").ToString+"\"+"PDF - "+in_TransactionItem.SpecificContent("No Serie").ToString+" - "+in_TransactionItem.SpecificContent("No Correlativo").ToString+".pdf"]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_NCorrelativo">[in_TransactionItem.SpecificContent("No Correlativo").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_GRdocPDF">[v_GRdocPDF]</InArgument>
+                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_GRdocXML">[v_GRdocXML]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaFactura">[in_Config("RutaCarp_Factura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_NPedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaFecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinGR">[v_SinGR]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Fecha">[in_TransactionItem.SpecificContent("Fecha Inicial").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_SerieFactura">[in_TransactionItem.SpecificContent("No Serie").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NoExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_6" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el OC&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el OC&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+          <ui:IfElseIfV2 Condition="[v_docOC]" DisplayName="Requiere OC" sap:VirtualizedContainerService.HintSize="530,1603.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_5">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinOC" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="5_Obtener_OC - Invoke Workflow File (Data\Output\5_Obtener_OC.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:08:00" UnSafe="False" WorkflowFileName="Data\Output\5_Obtener_OC.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_NCorrelativo">[in_TransactionItem.SpecificContent("No Correlativo").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaPDF">[in_Config("RutaCarp_Factura").ToString+in_TransactionItem.SpecificContent("Razon Social").ToString+"\"+DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")+"\"+in_TransactionItem.SpecificContent("No Pedido").ToString+"\"+"PDF - "+in_TransactionItem.SpecificContent("No Serie").ToString+" - "+in_TransactionItem.SpecificContent("No Correlativo").ToString+".pdf"]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_SerieFactura">[in_TransactionItem.SpecificContent("No Serie").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaCarpeta">[in_Config("RutaOrgaDocumentaria").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_NPedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinOC">[v_SinOC]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaDocumento">[in_Config("RutaCarp_Factura").ToString+in_TransactionItem.SpecificContent("Razon Social").ToString+"\"+DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")+"\"+in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NoCeldaExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_5" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+          <ui:IfElseIfV2 Condition="[v_docVALE]" DisplayName="Requiere VALE" sap:VirtualizedContainerService.HintSize="530,1603.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_6">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinVALE" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="6_Obtener_VALE - Invoke Workflow File (Data\Output\6_Obtener_VALE.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:05:00" UnSafe="False" WorkflowFileName="Data\Output\6_Obtener_VALE.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinVALE">[v_SinVALE]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+          <ui:IfElseIfV2 Condition="[v_docACTA]" DisplayName="Requiere ACTA" sap:VirtualizedContainerService.HintSize="530,1603.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_8">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinACTA" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="7_Obtener_ACTA - Invoke Workflow File (Data\Output\7_Obtener_ACTA.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:05:00" UnSafe="False" WorkflowFileName="Data\Output\7_Obtener_ACTA.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinACTA">[v_SinACTA]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+          <ui:IfElseIfV2 Condition="[v_docArchivoExcel]" DisplayName="Requiere ARCHIVO EXCEL" sap:VirtualizedContainerService.HintSize="530,1603.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_9">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinArchivoExcel" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="8_Obtener_Archivo_Excel - Invoke Workflow File (Data\Output\8_Obtener_Archivo_Excel.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:05:00" UnSafe="False" WorkflowFileName="Data\Output\8_Obtener_Archivo_Excel.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinArchivoExcel">[v_SinArchivoExcel]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el ARCHIVO EXCEL&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el ARCHIVO EXCEL&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+          <ui:IfElseIfV2 Condition="[v_docMIGO]" DisplayName="Requiere MIGO" sap:VirtualizedContainerService.HintSize="530,1594" sap2010:WorkflowViewState.IdRef="IfElseIfV2_12">
+            <ui:IfElseIfV2.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfV2.Else>
+            <ui:IfElseIfV2.ElseIfs>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+            </ui:IfElseIfV2.ElseIfs>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:IfElseIfV2.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="528,1324.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="v_SinMIGO" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="494,1264.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="452,1063.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1003.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="9_Obtener_MIGO - Invoke Workflow File (Data\Output\9_Obtener_MIGO.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:03:00" UnSafe="False" WorkflowFileName="Data\Output\9_Obtener_MIGO.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SinMIGO">[v_SinMIGO]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_NExcel">[v_NoPosicionExcel]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,520" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;]" />
+                                  <Throw Exception="[New System.Exception(&quot;Se supero el tiempo limite para escribir que falta el MIGO&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                          <TryCatch.Finally>
+                            <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </TryCatch.Finally>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </ui:IfElseIfV2.Then>
+          </ui:IfElseIfV2>
+        </Sequence>
+      </ui:IfElseIfV2.Else>
+      <ui:IfElseIfV2.ElseIfs>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+      </ui:IfElseIfV2.ElseIfs>
+      <ui:IfElseIfV2.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="564,1289.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Ya se proceso esta transacción: &quot;+ in_TransactionItem.SpecificContent(&quot;No Pedido&quot;).ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Se creara la carpeta del cliente&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Crear_Carpeta_Cliente - Invoke Workflow File (Data\Input\Crear_Carpeta_Cliente.xaml)" sap:VirtualizedContainerService.HintSize="530,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" UnSafe="False" WorkflowFileName="Data\Input\Crear_Carpeta_Cliente.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_rutaFacturas">[in_Config("RutaCarp_Factura").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_fecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_rutaDoc">[v_rutaDoc]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_NPedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="0.3_Encontrar_Transacción_Excel - Invoke Workflow File (Data\Input\0.3_Encontrar_Transacción_Excel.xaml)" sap:VirtualizedContainerService.HintSize="530,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Data\Input\0.3_Encontrar_Transacción_Excel.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Pedido">[in_TransactionItem.SpecificContent("No Pedido").ToString]</InArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_NoPosición">[v_NoPosicionExcel]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Obtener solicitudes documentarios del cliente&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_Obtener_requerimientos - Invoke Workflow File (Data\Temp\1_Obtener_requerimientos.xaml)" sap:VirtualizedContainerService.HintSize="530,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" UnSafe="False" WorkflowFileName="Data\Temp\1_Obtener_requerimientos.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_ItemTransaccion">[in_TransactionItem]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docPDF">[v_docPDF]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docXML">[v_docXML]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docCDR">[v_docCDR]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docNE">[v_docNE]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docOC">[v_docOC]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docVALE">[v_docVALE]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docACTA">[v_docACTA]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docArchivoExcel">[v_docArchivoExcel]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docGR">[v_docGR]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_docMIGO">[v_docMIGO]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_GRdocPDF">[v_GRdocPDF]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_GRdocXML">[v_GRdocXML]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Se pasara a realizar el conteo de Archivos&quot;]" />
+        </Sequence>
+      </ui:IfElseIfV2.Then>
+    </ui:IfElseIfV2>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="10_Enviar_Documentos - Invoke Workflow File (Data\Output\10_Enviar_Documentos.xaml)" sap:VirtualizedContainerService.HintSize="566,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" Timeout="00:05:00" UnSafe="False" WorkflowFileName="Data\Output\10_Enviar_Documentos.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Procesado_1">[in_TransactionItem.SpecificContent("Procesado").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RazonSocial">[in_TransactionItem.SpecificContent("Razon Social").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docPDF">[v_docPDF]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docXML">[v_docXML]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docCDR">[v_docCDR]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docNE">[v_docNE]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docOC">[v_docOC]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docVALE">[v_docVALE]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docACTA">[v_docACTA]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docArchivoExcel">[v_docArchivoExcel]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_docMIGO">[v_docMIGO]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_GRdocPDF">[v_GRdocPDF]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_GRdocXML">[v_GRdocXML]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_rutaDocumentos">[v_rutaDoc.ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SerieFactura">[in_TransactionItem.SpecificContent("No Serie").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_NCorrelativo">[in_TransactionItem.SpecificContent("No Correlativo").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FacturaSAP">[in_TransactionItem.SpecificContent("Factura SAP").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_rutaArchivoFactura">[in_Config("RutaArchivoFactura").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CodigoCliente">[in_TransactionItem.SpecificContent("CodigoCliente").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_fecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_NExcel">[v_NoPosicionExcel]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TipoEnvio">[in_TransactionItem.SpecificContent("Tipo Envio").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

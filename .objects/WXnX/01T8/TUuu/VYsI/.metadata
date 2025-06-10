@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Ene(1)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "VYsII4-beEiIfU-GdbnUsA",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/VYsII4-beEiIfU-GdbnUsA",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/TUuuGIPP2UG4igNzxbIKQQ",
+  "Created": "2025-05-07T22:18:14.4053876Z",
+  "Updated": "2025-05-07T22:18:14.4053876Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

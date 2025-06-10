@@ -1,0 +1,13 @@
+﻿{
+  "Name": "No soy un robot",
+  "Type": "Element",
+  "Id": "NjRrT3tzTEm-mIPfXt6uCQ",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/NjRrT3tzTEm-mIPfXt6uCQ",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/e0Rv5_jqaUevntjG0YKXJQ",
+  "Created": "2025-04-24T22:28:12.0680846Z",
+  "Updated": "2025-04-24T22:28:12.0680846Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

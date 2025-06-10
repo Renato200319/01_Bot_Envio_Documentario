@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xz2pWOOsKEypsslRa8vQ2g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="cf39c884-f52f-4558-9240-114dd040948d" CvTextArea="75, 429, 156, 18" CvTextArgument="Comprobantes Emitidos" CvType="Text" DesignTimeRectangle="28, 424, 247, 32" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Comprobantes Emitidos' tag='A' /&gt;" Guid="e7efb77a-9886-4264-b289-e92499e44cf2" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="83c548a6801f19e5d8f931389f7c03dd.png" xmlns="">0IeqmBcAgVE28n7zJhkU0Lg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

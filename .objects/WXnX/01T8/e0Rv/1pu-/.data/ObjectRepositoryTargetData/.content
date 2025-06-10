@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="y8Us2Vq47k-GmExlJbDCwA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7133dadd-d969-4223-84dd-a1f9c8ab469e" CvTextArea="479, 479, 232, 31" CvTextArgument="Filtros de Búsqueda" CvType="Text" DesignTimeRectangle="446, 476, 1402, 36" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='panel-title' tag='H4' type='' aaname='              Filtros de Búsqueda         ' check:innerText='Filtros de Búsqueda' /&gt;" Guid="818b6697-7a52-4ab0-a710-65fae6208df6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="7133dadd-d969-4223-84dd-a1f9c8ab469e" CvTextArea="474, 342, 430, 43" CvTextArgument="Comprobantes Emitidos" CvType="Text" DesignTimeRectangle="409, 333, 1477, 60" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' tag='H2' class='' aaname='Comprobantes Emitidos' check:innerText='Comprobantes Emitidos' /&gt;" Guid="603cc39d-b74a-43a5-b50e-0f6a2f52f083" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6dcf6415ae369ededac05708c0b72cfe.png" xmlns="">0Vi3rSIPQA0i_Ie9VwZ_99Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

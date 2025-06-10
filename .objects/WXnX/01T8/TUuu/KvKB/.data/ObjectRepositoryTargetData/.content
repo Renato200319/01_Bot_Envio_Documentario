@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7_9ablJu2kqHAxDiZTyJew" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="4145a90d-a5ab-4430-bfb7-ee5efffb912c" CvElementArea="1402, 271, 28, 27" CvTextArea="446, 273, 250, 21" CvTextArgument="Detalle Guía de Remisión" CvType="CloseButton" DesignTimeRectangle="447, 270, 979, 32" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='myModalLabresPdfModalel' tag='H4' type='' class='modal-title' aaname='Detalle Guía de Remisión' check:innerText='Detalle Guía de Remisión' /&gt;" Guid="bb8f63e4-aaea-462b-81a2-b07fff36d5fd" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="d3a03296b8ca8e367e6f1578215948b4.png" xmlns="">0BkNEHDYxPUiSAgrYcct-Yg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

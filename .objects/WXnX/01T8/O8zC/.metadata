@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Chrome Descarga PDF",
+  "Type": "Screen",
+  "Id": "O8zClEYfwkKgUYZzXUlQrg",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/O8zClEYfwkKgUYZzXUlQrg",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/01T8IUpKokisyxDBOnWqEA",
+  "Created": "2025-04-28T18:56:24.0575302Z",
+  "Updated": "2025-04-28T18:56:48.85134Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

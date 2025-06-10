@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wOS59k2xL0igWuH4ov1iuw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="e93c691f-8263-4f51-8b18-fb1ffbd17f01" CvElementArea="588, 483, 250, 49" CvType="InputBox" DesignTimeRectangle="590, 485, 246, 45" DesignTimeScaleFactor="1.125" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fechaDesde' tag='INPUT' type='text' class='form-control from_date' placeholder='Fecha Desde' aaname='' /&gt;" Guid="9177f530-15f1-401d-90ba-696b2476cbaa" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f53fdc79596f2e5049d23809d9ea40f5.png" xmlns="">0cs6dkpZse0GPACa7u1MsBQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

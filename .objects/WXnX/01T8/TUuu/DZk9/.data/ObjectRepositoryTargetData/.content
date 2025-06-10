@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="eX-cC24vw0iDFSwKdKQJSA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="bf90e910-cd51-4072-a85d-af7f0e61636b" CvElementArea="785, 903, 72, 43" CvTextArea="803, 914, 36, 16" CvTextArgument="XML" CvType="Button" DesignTimeRectangle="788, 905, 68, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FullSelectorArgument="&lt;webctrl id='xmlFile' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='xmlFile' tag='BUTTON' type='' class='btn btn-primary' aaname='XML' check:innerText='XML' /&gt;" Guid="ad2f8765-66b1-4461-907c-a439fb7f16af" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9673fec5c6bd6483399ed22b5bb10df8.png" xmlns="">035hm0ufTmEqDJ5JEUnVR4Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

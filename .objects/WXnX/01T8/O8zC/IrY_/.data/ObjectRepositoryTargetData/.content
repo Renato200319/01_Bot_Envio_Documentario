@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="T6xiGAHqoUef4fCCvXb5LQ" Reference="dHlVBlqNnU63xQsMqdfbMw/IrY_drVKGkqv0__OzswefQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="ccdd962d-504e-49fc-aa9a-4bbaed744e35" DesignTimeRectangle="958, 850, 64, 16" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl id='table' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="055ad410-c250-4899-b1b4-ed24ca0788fd" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="d25ae770a649630d3a36edca74674feb.png" xmlns="">0MO-Rl7yk8UKXFt_21chZnw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

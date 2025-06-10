@@ -1,0 +1,14 @@
+﻿{
+  "Name": "PDF",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "GvvT8BQDxkeMrDHhZ6S6EQ",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/GvvT8BQDxkeMrDHhZ6S6EQ",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/O8zClEYfwkKgUYZzXUlQrg",
+  "Created": "2025-04-28T20:21:06.626744Z",
+  "Updated": "2025-04-28T20:21:06.626744Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

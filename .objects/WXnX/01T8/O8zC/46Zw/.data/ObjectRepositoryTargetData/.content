@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="x7vGjUyjiUiXkOI14HuHOw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="bb9fc092-0715-4816-8863-572c8e0e5959" CvElementArea="1413, 271, 29, 28" CvTextArea="458, 273, 214, 25" CvTextArgument="Detalle Comprobante" CvType="CloseButton" DesignTimeRectangle="442, 253, 1013, 67" DesignTimeScaleFactor="1.125" FullSelectorArgument="&lt;webctrl class='modal-header' parentid='myModal' tag='DIV' /&gt;" Guid="07568a3e-f486-4747-b110-cb8023284bda" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e014ae2b84ec0c384fd404713987c157.png" xmlns="">0K-Uip63lMUqG3XGxFSMxng</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

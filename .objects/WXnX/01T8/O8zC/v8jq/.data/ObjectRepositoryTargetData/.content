@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IrghJPg7XkaWGnN2U8IAEA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="91f8d7af-84d1-4537-87ad-dcdd66809f7d" CvTextArea="362, 336, 175, 22" CvTextArgument="Filtros de Búsqueda" CvType="Text" DesignTimeRectangle="337, 334, 1526, 27" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='panel-title' tag='H4' type='' aaname='              Filtros de Búsqueda         ' check:innerText='Filtros de Búsqueda' /&gt;" Guid="8606cca1-5c3b-4d64-94ef-f1c7806616ac" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8d3fd221ee9894b840c54b4a7c565882.png" xmlns="">0GEfiSxxeT0i_QLlHUaF7MA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

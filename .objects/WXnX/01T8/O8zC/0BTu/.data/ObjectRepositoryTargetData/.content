@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2ptrzAZpUkuja9_Qx49Uuw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="d88f8032-47eb-459b-846b-864e4b3988b5" DesignTimeRectangle="848, 389, 246, 46" DesignTimeScaleFactor="1.125" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='numeroCorrelativo' tag='INPUT' /&gt;" Guid="96d5ae34-774b-45b5-9df2-3c9319e99867" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="d88f8032-47eb-459b-846b-864e4b3988b5" DesignTimeRectangle="337, 247, 1526, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl class='panel-title' tag='H4' /&gt;" Guid="74d5f1d6-5fe9-41d1-9586-479c6d6f0d99" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset X="-8" Y="-7" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="781cd45cb3a482f69fdb0b230c848040.png" xmlns="">0BgG3jJvna02MgsrvO2nVsg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

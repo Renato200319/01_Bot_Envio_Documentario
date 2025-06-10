@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Filtros de Búsqueda",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "1pu-Inr9SkqI_riyc5stuQ",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/1pu-Inr9SkqI_riyc5stuQ",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/e0Rv5_jqaUevntjG0YKXJQ",
+  "Created": "2025-04-24T22:36:00.0201493Z",
+  "Updated": "2025-04-24T22:36:00.0201493Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="6H4vexjAHkeQqrKUDKSwmw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="cceadd1e-8f76-4521-9d67-9ded5ee66d58" CvTextArea="912, 600, 40, 16" CvTextArgument="[v_anioActual]" CvType="Text" DesignTimeRectangle="911, 580, 45, 61" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Hoy Limpiar' class='table-condensed' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' type='' tag='SPAN' class='year disabled' check:innerText='{0}' /&gt;&quot;, v_anioActual)]" Guid="d7de356c-7942-4a57-9299-c1a35814f169" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="63700d338e0408b3084517783fe3fb75.png" xmlns="">0r1C75HqlVkWMYl0U3g79_w</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="v_anioActual" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

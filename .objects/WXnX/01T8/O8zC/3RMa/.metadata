@@ -1,0 +1,14 @@
+﻿{
+  "Name": "2020",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "3RMah1pbpEmEi6r2m6sUqA",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/3RMah1pbpEmEi6r2m6sUqA",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/O8zClEYfwkKgUYZzXUlQrg",
+  "Created": "2025-05-03T20:57:48.5030043Z",
+  "Updated": "2025-05-03T20:57:48.5030043Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

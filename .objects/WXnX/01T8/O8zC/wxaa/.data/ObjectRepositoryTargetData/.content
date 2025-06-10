@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="k8GHxfYE60u0MZd6UsaiZw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="fcffd995-3f01-4f82-aa32-0764887d3d8f" CvTextArea="324, 797, 147, 16" CvTextArgument="Mostrando 1 a 1 de 1" CvType="Text" DesignTimeRectangle="327, 798, 144, 16" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='pagination-info' tag='SPAN' type='' aaname='Mostrando * a * de *' check:innerText='Mostrando * a * de *' /&gt;" Guid="8df9828d-266e-49cc-a6db-502d242550b5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="fcffd995-3f01-4f82-aa32-0764887d3d8f" CvTextArea="324, 836, 125, 19" CvTextArgument="Total de registros:" CvType="Text" DesignTimeRectangle="327, 837, 126, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Total de registros: ' tag='SPAN' type='' class='' check:innerText='Total de registros:' /&gt;" Guid="4b59ba73-bb8c-4ab3-9bfe-a4be01ca03f7" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="2f22f417be756ba9c8dda4bfc4c86b9f.png" xmlns="">01edkv7d5d0GWi1BBQqO-EA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="cBBNe81O6kuD2EhTx8Jmbw" Reference="dHlVBlqNnU63xQsMqdfbMw/YeFn4DaqM0unjtDSHl7IhQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="401f6992-3657-45ff-91ba-46f8232a7489" CvTextArea="912, 728, 40, 16" CvTextArgument="[v_anioAntes]" CvType="Text" DesignTimeRectangle="653, 707, 45, 60" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Hoy Limpiar' class='table-condensed' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' type='' tag='SPAN' check:innerText='{0}' /&gt;&quot;, v_anioAntes)]" Guid="e3a75236-e11c-47f7-a209-a5b43049def9" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.PointOffset>
+        <PointOffset Position="TopLeft" X="13" Y="16" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="b34db8efd513387174d5b019f4e20433.png" xmlns="">0BCMWNiRtcEeRp9J7vBrA3A</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="v_anioAntes" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

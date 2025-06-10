@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Comprobantes",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "AezL0ReV3EOZlTZN9WkelQ",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/AezL0ReV3EOZlTZN9WkelQ",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/TUuuGIPP2UG4igNzxbIKQQ",
+  "Created": "2025-05-08T18:32:02.5945455Z",
+  "Updated": "2025-05-08T18:32:02.5945455Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

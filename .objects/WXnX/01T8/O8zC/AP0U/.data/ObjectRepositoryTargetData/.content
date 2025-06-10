@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mOTfhYLCokqWVS7sdrccdg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="25880b15-191b-42c1-930a-e7b9dac60cf6" CvTextArea="74, 308, 106, 19" CvTextArgument="Comprobantes" CvType="Text" DesignTimeRectangle="77, 309, 103, 16" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='' aaname='Comprobantes' check:innerText='Comprobantes' /&gt;" Guid="ee71cf72-7a91-40ab-a68d-bdb0a466e454" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="5b34000e9b3ba56e4e5c10cfe2693eb5.png" xmlns="">0hzs8FnbRYEGjRJs7TxIVhg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

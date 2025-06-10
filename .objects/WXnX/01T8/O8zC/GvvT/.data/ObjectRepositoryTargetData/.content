@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="43oCfX_QsEm6P6piSVPoWw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7496e229-2b0f-408c-9617-493939c58d08" CvElementArea="771, 751, 72, 43" CvTextArea="791, 764, 31, 15" CvTextArgument="PDF" CvType="Button" DesignTimeRectangle="774, 753, 66, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='pdfFile' tag='BUTTON' type='' class='btn btn-orange' aaname='PDF' check:innerText='PDF' /&gt;" Guid="9ac3766e-7261-491b-b239-da795c8dbe0e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0bd0e5009e2c8e6cd9a2bd94675f48cb.png" xmlns="">0DFOqXWZl-0CtLz4FnI7IRg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

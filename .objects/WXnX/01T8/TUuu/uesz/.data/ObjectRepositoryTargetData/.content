@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="E4uU_OVZtEGOI2mXhfnbjA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" CVScreenId="e3b98f26-eb00-4477-bd39-60085a6503e0" CvTextArea="879, 818, 67, 16" CvTextArgument="[v_NoCorrelativoGuia]" CvType="Text" DesignTimeRectangle="882, 819, 64, 16" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='table' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' type='' tag='A' class='' check:innerText='{0}' /&gt;&quot;, v_NoCorrelativoGuia)]" Guid="1f429ae9-f659-41f0-b37f-e845be30880e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c87d3ef5a0e758ad8125515d161e9488.png" xmlns="">0k_k33EYRxUyEWkrFy2zgQg</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="v_NoCorrelativoGuia" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

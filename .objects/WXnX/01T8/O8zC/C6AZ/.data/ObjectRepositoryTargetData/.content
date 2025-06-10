@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="m2z-kfkAJ0eWKRRsdYOLrw" Reference="dHlVBlqNnU63xQsMqdfbMw/C6AZpCivdE2PBg9b4uoqDQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="998cb1e8-bae6-4eaa-82f5-24907d1c8d50" CvElementArea="845, 459, 251, 49" CvType="InputBox" DesignTimeRectangle="848, 461, 246, 45" DesignTimeScaleFactor="1.125" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fechaHasta' tag='INPUT' type='text' class='form-control to_date valid' placeholder='Fecha Hasta (dd/mm/yyyy)' aaname='' /&gt;" Guid="be68d504-4081-4da4-b62a-daa3aae32889" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ca9110f90b357842b9f5762b02d8bd06.png" xmlns="">0d8r1Vf3CxES17N3BSphG9Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

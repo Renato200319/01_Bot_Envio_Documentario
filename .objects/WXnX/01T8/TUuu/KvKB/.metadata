@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Detalle Guía de Remisión",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "KvKBZKWO00aKqP2OH8b2HQ",
+  "Reference": "dHlVBlqNnU63xQsMqdfbMw/KvKBZKWO00aKqP2OH8b2HQ",
+  "ParentRef": "dHlVBlqNnU63xQsMqdfbMw/TUuuGIPP2UG4igNzxbIKQQ",
+  "Created": "2025-05-08T04:36:23.4426861Z",
+  "Updated": "2025-05-08T04:36:23.4426861Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

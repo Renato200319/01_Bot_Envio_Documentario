@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ToPMF7LFekaLWDmfPHrs9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/guiasEmitidas/index" DesignTimeRectangle="522, 584, 135, 64" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl id='table' tag='TABLE' /&gt;&lt;webctrl tableCol='4' tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='table' tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="506d2a95-4660-4d68-a3af-3d6097ba7291" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="1080ced0-3735-4421-84ee-0f7a10fa3cda" CvTextArea="326, 693, 145, 16" CvTextArgument="Mostrando 1a 1 de 1" CvType="Text" DesignTimeRectangle="326, 673, 1548, 60" FullSelectorArgument="&lt;webctrl class='clearfix' tag='DIV' aaname='Mostrando 1a 1 de 1' /&gt;" FuzzySelectorArgument="&lt;webctrl class='clearfix' tag='DIV' type='' aaname='Mostrando 1a 1 de 1' check:text='' /&gt;" Guid="bd34b28b-dbe1-4b9e-8b48-f0ac48e07745" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="cbd79540bc399fae51d09dc73f238985.png" xmlns="">0Mh_wNC6PyUKUiRf54REGPw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

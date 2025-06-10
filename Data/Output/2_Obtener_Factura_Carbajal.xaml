@@ -1,0 +1,1506 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_2_Obtener_Factura_PDF" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_itemCola" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="out_SinFactura" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_rutaDocumento" Type="InArgument(x:String)" />
+    <x:Property Name="in_PDF" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_XML" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_CDR" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_rutaFactura" Type="InArgument(x:String)" />
+    <x:Property Name="in_rutaFecha" Type="InArgument(x:String)" />
+    <x:Property Name="in_NPedido" Type="InArgument(x:String)" />
+    <x:Property Name="in_rutaArchivoFactura" Type="InArgument(x:String)" />
+    <x:Property Name="in_NEncontrar" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <this:_2_Obtener_Factura_PDF.in_itemCola>
+    <InArgument x:TypeArguments="ui:QueueItem" />
+  </this:_2_Obtener_Factura_PDF.in_itemCola>
+  <this:_2_Obtener_Factura_PDF.out_SinFactura>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:_2_Obtener_Factura_PDF.out_SinFactura>
+  <this:_2_Obtener_Factura_PDF.in_rutaDocumento>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_2_Obtener_Factura_PDF.in_rutaDocumento>
+  <this:_2_Obtener_Factura_PDF.in_PDF>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:_2_Obtener_Factura_PDF.in_PDF>
+  <this:_2_Obtener_Factura_PDF.in_XML>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:_2_Obtener_Factura_PDF.in_XML>
+  <this:_2_Obtener_Factura_PDF.in_CDR>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:_2_Obtener_Factura_PDF.in_CDR>
+  <this:_2_Obtener_Factura_PDF.in_rutaFactura>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_2_Obtener_Factura_PDF.in_rutaFactura>
+  <this:_2_Obtener_Factura_PDF.in_rutaFecha>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_2_Obtener_Factura_PDF.in_rutaFecha>
+  <this:_2_Obtener_Factura_PDF.in_NPedido>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_2_Obtener_Factura_PDF.in_NPedido>
+  <this:_2_Obtener_Factura_PDF.in_rutaArchivoFactura>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_2_Obtener_Factura_PDF.in_rutaArchivoFactura>
+  <this:_2_Obtener_Factura_PDF.in_NEncontrar>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:_2_Obtener_Factura_PDF.in_NEncontrar>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>_2_Obtener_Factura_PDF_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_2_Obtener_Factura_PDF" sap:VirtualizedContainerService.HintSize="1690,16680.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="v_NSerie" />
+      <Variable x:TypeArguments="x:String" Name="v_NCorrelativo" />
+      <Variable x:TypeArguments="x:String" Name="v_RazonSocial" />
+      <Variable x:TypeArguments="x:String" Name="v_Fecha" />
+      <Variable x:TypeArguments="x:String" Name="v_FacturaSAP" />
+      <Variable x:TypeArguments="x:String" Name="v_dia" />
+      <Variable x:TypeArguments="x:String" Name="v_mes" />
+      <Variable x:TypeArguments="x:String" Name="v_anio" />
+      <Variable x:TypeArguments="s:DateTime" Name="v_FechaCalendar" />
+      <Variable x:TypeArguments="x:String" Name="v_FechaFormato" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Clientes" />
+      <Variable x:TypeArguments="x:Int32" Name="v_contador" />
+      <Variable x:TypeArguments="s:DateTime" Name="v_FechaAntes" />
+      <Variable x:TypeArguments="x:String" Name="v_FechaFormatoAntes" />
+      <Variable x:TypeArguments="x:String" Name="v_diaAntes" />
+      <Variable x:TypeArguments="x:String" Name="v_mesAntes" />
+      <Variable x:TypeArguments="x:String" Name="v_anioAntes" />
+      <Variable x:TypeArguments="x:Boolean" Name="v_completoXML" />
+      <Variable x:TypeArguments="x:String" Name="v_Descarga" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1690,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[INICIO] Busqueda de Facturas&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1690,57.333333333333336" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_NSerie]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_itemCola.SpecificContent("No Serie").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_NCorrelativo]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_itemCola.SpecificContent("No Correlativo").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_RazonSocial]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_itemCola.SpecificContent("Razon Social").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_Fecha]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_itemCola.SpecificContent("Fecha Inicial").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_FacturaSAP]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_itemCola.SpecificContent("Factura SAP").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:DateTime">[v_FechaCalendar]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(v_fecha, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_FechaFormato]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[v_FechaCalendar.ToString("d/MMM/yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("es-PE"))]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_dia]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[CInt(v_FechaFormato.ToString.Split("/"c)(0)).ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_mes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[v_FechaFormato.Split("/"c)(1).Substring(0,1).ToUpper + v_FechaFormato.Split("/"c)(1).Substring(1,2).ToLower]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_anio]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[v_FechaCalendar.ToString.Split("/"c)(2).Substring(0, 4)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:DateTime">[v_FechaAntes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:DateTime">[v_FechaCalendar.AddDays(-15)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_FechaFormatoAntes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[v_FechaAntes.ToString("d/MMM/yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("es-PE"))]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_diaAntes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[CInt(v_FechaFormatoAntes.ToString.Split("/"c)(0)).ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_mesAntes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[v_FechaFormatoAntes.Split("/"c)(1).Substring(0,1).ToUpper + v_FechaFormatoAntes.Split("/"c)(1).Substring(1,2).ToLower]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[v_anioAntes]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[v_FechaFormatoAntes.ToString.Split("/"c)(2).Substring(0, 4)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1690,16424" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="1688,15820" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1654,15760" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="1612,15558.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1578,15498.666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="1576,14546" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Todas Mis Facturas(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1542,14486" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1508,14244" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="v_ExisteDatos" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheckState DisplayName="Comprobar el estado de la aplicación 'Filtros de Búsqueda(2)'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="1474,213.33333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="El objetivo aparece." sap:VirtualizedContainerService.HintSize="450,92.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="El objetivo no aparece." sap:VirtualizedContainerService.HintSize="450,92.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="91f8d7af-84d1-4537-87ad-dcdd66809f7d" ContentHash="IrghJPg7XkaWGnN2U8IAEA" CvTextArea="362, 336, 175, 22" CvTextArgument="Filtros de Búsqueda" CvType="Text" DesignTimeRectangle="337, 334, 1526, 27" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='panel-title' tag='H4' type='' aaname='              Filtros de Búsqueda         ' check:innerText='Filtros de Búsqueda' /&gt;" Guid="8606cca1-5c3b-4d64-94ef-f1c7806616ac" InformativeScreenshot="8d3fd221ee9894b840c54b4a7c565882.png" Reference="dHlVBlqNnU63xQsMqdfbMw/v8jq4Sp0PECxNx5sb1aXJw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Filtros de Búsqueda'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Text="[v_NSerie]" Version="V4">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="42742c9b-e77a-4a08-a784-66ecf7e37c71" ContentHash="KTL0QvNtaU2diprT7MX2Zg" DesignTimeRectangle="677, 665, 224, 59" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='numeroSerie' tag='INPUT' /&gt;" Guid="cc912184-2aeb-4d86-a91d-c6747ceed798" InformativeScreenshot="c8efc603313b932f101cc0250676fcce.png" Reference="dHlVBlqNnU63xQsMqdfbMw/_MdxmIOLBEukteI2kacCMw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="69b1d95b-cbb3-44e3-be1f-3efc16c3fb42" DesignTimeRectangle="446, 476, 1402, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl class='panel-title' tag='H4' /&gt;" Guid="c91e6b3a-aba3-4c39-b852-7193c16e0f32" SearchSteps="Selector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.VerifyOptions>
+                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                    </uix:VerifyExecutionTypeIntoOptions>
+                                  </uix:NTypeInto.VerifyOptions>
+                                </uix:NTypeInto>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Filtros de Búsqueda'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Text="[v_NCorrelativo]" Version="V4">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="d88f8032-47eb-459b-846b-864e4b3988b5" ContentHash="2ptrzAZpUkuja9_Qx49Uuw" DesignTimeRectangle="848, 389, 246, 46" DesignTimeScaleFactor="1.125" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='numeroCorrelativo' tag='INPUT' /&gt;" Guid="96d5ae34-774b-45b5-9df2-3c9319e99867" InformativeScreenshot="781cd45cb3a482f69fdb0b230c848040.png" Reference="dHlVBlqNnU63xQsMqdfbMw/0BTutxhSykaUeN9rPsCviw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="d88f8032-47eb-459b-846b-864e4b3988b5" DesignTimeRectangle="337, 247, 1526, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl class='panel-title' tag='H4' /&gt;" Guid="74d5f1d6-5fe9-41d1-9586-479c6d6f0d99" SearchSteps="Selector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                      <uix:TargetAnchorable.PointOffset>
+                                        <uix:PointOffset X="-8" Y="-7" />
+                                      </uix:TargetAnchorable.PointOffset>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.VerifyOptions>
+                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                    </uix:VerifyExecutionTypeIntoOptions>
+                                  </uix:NTypeInto.VerifyOptions>
+                                </uix:NTypeInto>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Caledar Desde - 15 dias" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="998cb1e8-bae6-4eaa-82f5-24907d1c8d50" ContentHash="TsHHMilejUG-EsZ_x0uGqA" CvElementArea="587, 459, 251, 49" CvType="InputBox" DesignTimeRectangle="590, 461, 246, 45" DesignTimeScaleFactor="1.125" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fechaDesde' tag='INPUT' type='text' class='form-control from_date valid' placeholder='Fecha Desde (dd/mm/yyyy)' aaname='' /&gt;" Guid="4ce7cd8f-9af5-4aa7-a6c4-a11ca10bc2b3" InformativeScreenshot="dfe968d64995c6625b73ef48cf2c6338.png" Reference="dHlVBlqNnU63xQsMqdfbMw/-r5WdMNriUesPVT-Wp2aww" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Mes - Antes" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="77c74cfe-c4b1-46f0-a463-ba687a11cec7" ContentHash="rremXwhvlUGcR-L2187Gvw" DesignTimeRectangle="628, 515, 163, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl class='datepicker-switch' tableRow='1' tag='TH' /&gt;" Guid="ba604fee-1293-4e7e-b4f9-c429aa7570b6" InformativeScreenshot="042052e40f2bceb72419ce36fc9a4a57.png" Reference="dHlVBlqNnU63xQsMqdfbMw/k3JIJfoZFE6cyAvGiRfQPg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Año - Antes" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="5293df69-7009-4bfa-b3b7-d27372a4af75" ContentHash="Jj5KIlL3QUCqYzIJoD_ifQ" DesignTimeRectangle="619, 515, 163, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl class='datepicker-switch' tableRow='1' tag='TH' /&gt;" Guid="832473c3-a786-4b21-be88-feede885f0e4" InformativeScreenshot="58727227b6bcbc1f8d6526975d44443f.png" Reference="dHlVBlqNnU63xQsMqdfbMw/MblLagW1dEmfoaKnKQU2Iw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Año Antes" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="401f6992-3657-45ff-91ba-46f8232a7489" ContentHash="cBBNe81O6kuD2EhTx8Jmbw" CvTextArea="912, 728, 40, 16" CvTextArgument="[v_anioAntes]" CvType="Text" DesignTimeRectangle="653, 707, 45, 60" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Hoy Limpiar' class='table-condensed' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' type='' tag='SPAN' check:innerText='{0}' /&gt;&quot;, v_anioAntes)]" Guid="e3a75236-e11c-47f7-a209-a5b43049def9" ImageBase64="" InformativeScreenshot="b34db8efd513387174d5b019f4e20433.png" Reference="dHlVBlqNnU63xQsMqdfbMw/YeFn4DaqM0unjtDSHl7IhQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.PointOffset>
+                                        <uix:PointOffset Position="TopLeft" X="13" Y="16" />
+                                      </uix:TargetAnchorable.PointOffset>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Mes Antes" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="68806737-cf2e-4ee9-88b7-79db12abec4b" ContentHash="xHl4pOe5QEmaN4Lz0iU-gw" CvTextArea="612, 728, 28, 15" CvTextArgument="[v_mesAntes]" CvType="Text" DesignTimeRectangle="612, 727, 27, 16" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_mesAntes)]" Guid="71e11732-690f-4986-a898-67c05506c781" ImageBase64="" InformativeScreenshot="b137e4faace7913127a0688a8ddc11ca.png" Reference="dHlVBlqNnU63xQsMqdfbMw/-_pdNl1Al0euQuQ8OWC__A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1474,824.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                  <TryCatch.Try>
+                                    <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NClick ActivateBefore="True" AlterIfDisabled="False" ClickType="Single" DisplayName="Click - Dia Antes" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="382,220" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Timeout="10" Version="V4">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="03ab8b80-97a7-44b0-bc05-7e0acc73bd0a" ContentHash="uLH1hgaOKk-IBq8mplDk4A" CvTextArea="738, 740, 10, 16" CvTextArgument="[v_diaAntes]" CvType="Text" DesignTimeRectangle="728, 733, 32, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='day' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_diaAntes)]" Guid="9f0bf82e-f3e5-40b8-802c-70bfe4a79315" ImageBase64="" InformativeScreenshot="c76db749b382fa75d6d194460c9a779a.png" Reference="dHlVBlqNnU63xQsMqdfbMw/v0ppUOg88EiJftNxzeTdLg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                        <uix:NClick.VerifyOptions>
+                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                            <uix:VerifyExecutionOptions.Retry>
+                                              <InArgument x:TypeArguments="x:Boolean" />
+                                            </uix:VerifyExecutionOptions.Retry>
+                                            <uix:VerifyExecutionOptions.Timeout>
+                                              <InArgument x:TypeArguments="x:Double" />
+                                            </uix:VerifyExecutionOptions.Timeout>
+                                          </uix:VerifyExecutionOptions>
+                                        </uix:NClick.VerifyOptions>
+                                      </uix:NClick>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Etiqueta(4)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,220" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="0819fb81-0e8a-47e5-bff8-4227ac35def1" ContentHash="FaCAocZmgU6w7vbpN4T52Q" CvTextArea="671, 774, 13, 16" CvTextArgument="[v_diaAntes]" CvType="Text" DesignTimeRectangle="660, 767, 36, 33" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' class='active day' tag='TD' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_diaAntes)]" Guid="1f56eeac-57cd-490a-951d-50dd9435d8f0" InformativeScreenshot="84a487d8887eabca2fda0e181db1530b.png" Reference="dHlVBlqNnU63xQsMqdfbMw/SG2kjb_HLUCoXRxcELFVsQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                  <TryCatch.Finally>
+                                    <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </TryCatch.Finally>
+                                </TryCatch>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '27042025'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="998cb1e8-bae6-4eaa-82f5-24907d1c8d50" ContentHash="m2z-kfkAJ0eWKRRsdYOLrw" CvElementArea="845, 459, 251, 49" CvType="InputBox" DesignTimeRectangle="848, 461, 246, 45" DesignTimeScaleFactor="1.125" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fechaHasta' tag='INPUT' type='text' class='form-control to_date valid' placeholder='Fecha Hasta (dd/mm/yyyy)' aaname='' /&gt;" Guid="be68d504-4081-4da4-b62a-daa3aae32889" InformativeScreenshot="ca9110f90b357842b9f5762b02d8bd06.png" Reference="dHlVBlqNnU63xQsMqdfbMw/C6AZpCivdE2PBg9b4uoqDQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Marzo 2025'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="77c74cfe-c4b1-46f0-a463-ba687a11cec7" ContentHash="rremXwhvlUGcR-L2187Gvw" DesignTimeRectangle="628, 515, 163, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl class='datepicker-switch' tableRow='1' tag='TH' /&gt;" Guid="ba604fee-1293-4e7e-b4f9-c429aa7570b6" InformativeScreenshot="042052e40f2bceb72419ce36fc9a4a57.png" Reference="dHlVBlqNnU63xQsMqdfbMw/k3JIJfoZFE6cyAvGiRfQPg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '2025'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="5293df69-7009-4bfa-b3b7-d27372a4af75" ContentHash="Jj5KIlL3QUCqYzIJoD_ifQ" DesignTimeRectangle="619, 515, 163, 34" DesignTimeScaleFactor="1.125" ElementType="Text" FullSelectorArgument="&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl class='datepicker-switch' tableRow='1' tag='TH' /&gt;" Guid="832473c3-a786-4b21-be88-feede885f0e4" InformativeScreenshot="58727227b6bcbc1f8d6526975d44443f.png" Reference="dHlVBlqNnU63xQsMqdfbMw/MblLagW1dEmfoaKnKQU2Iw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '2020'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="75e5364e-5ae7-4ba0-9df0-2ff7fec7b17b" ContentHash="aP9Y9CH9LUWyqg4QtIiJDA" CvTextArea="656, 578, 39, 16" CvTextArgument="[v_anio]" CvType="Text" DesignTimeRectangle="653, 557, 45, 60" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Hoy Limpiar' class='table-condensed' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' aaname='{0}' check:text='{0}' /&gt;&quot;, v_anio)]" Guid="f02a1a04-ac7a-4b80-bcaa-a4a8ecd0f1fb" ImageBase64="" InformativeScreenshot="2dec230ec10095126fbe1f8acdcddebc.png" Reference="dHlVBlqNnU63xQsMqdfbMw/3RMah1pbpEmEi6r2m6sUqA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ene'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="46b4bce1-d6f1-4449-beb4-0b8471447365" ContentHash="j0eH2nPCwUKYAdvaIzEuxg" DesignTimeRectangle="612, 579, 27, 15" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' aaname='{0}' check:text='{0}' /&gt;&quot;, v_mes)]" Guid="c4e066aa-f0bf-422a-b89e-e429f7530825" ImageBase64="" InformativeScreenshot="5f751f0b8c56e691c300eaf35d7dc2d3.png" Reference="dHlVBlqNnU63xQsMqdfbMw/nc4Bbh9KhUC_BQpxMJP5hA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1474,824.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                  <TryCatch.Try>
+                                    <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NClick ActivateBefore="True" AlterIfDisabled="False" ClickType="Single" CursorMotionType="Smooth" DisplayName="Click 'Etiqueta(3)'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="382,220" sap2010:WorkflowViewState.IdRef="NClick_25" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Timeout="10" Version="V4">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="45a68731-bf83-4b1e-8d9c-9410c29604b7" ContentHash="8hhUPd6JE0iwWnj1ky-dxA" CvTextArea="929, 696, 13, 16" CvTextArgument="[v_dia]" CvType="Text" DesignTimeRectangle="918, 689, 36, 33" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='day' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_dia)]" Guid="ffeb82df-54f0-4bd5-b774-1c4ce042de40" ImageBase64="" InformativeScreenshot="5e1142f7f0ddc797d6b516c71b8bec2f.png" Reference="dHlVBlqNnU63xQsMqdfbMw/i004O-lPvkSufDEGqV1CRQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                        <uix:NClick.VerifyOptions>
+                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                            <uix:VerifyExecutionOptions.Retry>
+                                              <InArgument x:TypeArguments="x:Boolean" />
+                                            </uix:VerifyExecutionOptions.Retry>
+                                            <uix:VerifyExecutionOptions.Timeout>
+                                              <InArgument x:TypeArguments="x:Double" />
+                                            </uix:VerifyExecutionOptions.Timeout>
+                                          </uix:VerifyExecutionOptions>
+                                        </uix:NClick.VerifyOptions>
+                                      </uix:NClick>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '14'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,220" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="f596b34c-3adc-4ba4-b54b-df245ed0ed36" ContentHash="aqsfut2uVkWOpSlZQGrQoA" CvTextArea="959, 809, 21, 15" CvTextArgument="[v_dia]" CvType="Text" DesignTimeRectangle="959, 807, 21, 16" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' class='active day' tag='TD' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_dia)]" Guid="22321fea-28bb-4e9c-9c4b-bf518eec9149" InformativeScreenshot="4af200fc0cbfa898cb71aae621ab79b7.png" Reference="dHlVBlqNnU63xQsMqdfbMw/lOiyiedSi0-F1nJfGBDUAA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                  <TryCatch.Finally>
+                                    <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </TryCatch.Finally>
+                                </TryCatch>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Etiqueta'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1474,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="ccdd962d-504e-49fc-aa9a-4bbaed744e35" ContentHash="vEVJ_hkdf06jp2K64fGIFw" DesignTimeRectangle="1106, 592, 102, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FullSelectorArgument="&lt;webctrl id='buscar' tag='BUTTON' /&gt;" Guid="b0fe171f-7daa-4025-ba11-4da7482d13f2" InformativeScreenshot="d1bcf3bf8e59a2e5edd5c5372b993ec0.png" Reference="dHlVBlqNnU63xQsMqdfbMw/NFGeyCDUB0Gu2ia6FYqxEg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NCheckState DisplayName="Comprobar el estado de la aplicación 'Mostrando 1 a 1 de 1'" sap:VirtualizedContainerService.HintSize="1474,9210.666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="El objetivo aparece." sap:VirtualizedContainerService.HintSize="668,8964" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '0011347'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="634,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="546880f9-0ac7-4e33-97e9-7182b9f3eac8" ContentHash="NCVYzmTOPEOKtLqrIpEkpg" CvTextArea="927, 771, 67, 16" CvTextArgument="[v_NCorrelativo]" CvType="Text" DesignTimeRectangle="930, 772, 63, 16" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='table' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_NCorrelativo)]" Guid="723d28e3-9249-40b6-9ac5-e3a20cbf2770" InformativeScreenshot="63e437f7078fca5eac063e66937ab9f3.png" Reference="dHlVBlqNnU63xQsMqdfbMw/FwW-fTUl-kGaan3CjRh93w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                        <uix:NClick.VerifyOptions>
+                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                            <uix:VerifyExecutionOptions.Retry>
+                                              <InArgument x:TypeArguments="x:Boolean" />
+                                            </uix:VerifyExecutionOptions.Retry>
+                                            <uix:VerifyExecutionOptions.Timeout>
+                                              <InArgument x:TypeArguments="x:Double" />
+                                            </uix:VerifyExecutionOptions.Timeout>
+                                          </uix:VerifyExecutionOptions>
+                                        </uix:NClick.VerifyOptions>
+                                      </uix:NClick>
+                                      <uix:NCheckState DisplayName="Comprobar el estado de la aplicación '× Detalle Comprobante'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="634,8672" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Timeout="5" Version="V4">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="El objetivo aparece." sap:VirtualizedContainerService.HintSize="590,8425.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="si:FileInfo" Name="v_PDFdescarga" />
+                                              <Variable x:TypeArguments="x:Boolean" Name="v_ExistePDF" />
+                                              <Variable x:TypeArguments="x:Boolean" Name="v_ExisteXML" />
+                                              <Variable x:TypeArguments="x:Boolean" Name="v_ExisteCDR" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:FileExistsX DisplayName="File Exists" Exists="[v_ExistePDF]" sap:VirtualizedContainerService.HintSize="556,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;PDF - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.pdf&quot;]" />
+                                            <Assign sap:VirtualizedContainerService.HintSize="556,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[v_Descarga]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads")]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <ui:IfElseIfV2 Condition="[v_ExistePDF]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="556,2406.6666666666665" sap2010:WorkflowViewState.IdRef="IfElseIfV2_7">
+                                              <ui:IfElseIfV2.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="554,1988.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:IfElseIfV2 Condition="[in_PDF]" DisplayName="Se necesita descargar Factura PDF" sap:VirtualizedContainerService.HintSize="520,1928.6666666666667" sap2010:WorkflowViewState.IdRef="IfElseIfV2_3">
+                                                    <ui:IfElseIfV2.Else>
+                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="518,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </ui:IfElseIfV2.Else>
+                                                    <ui:IfElseIfV2.ElseIfs>
+                                                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                                    </ui:IfElseIfV2.ElseIfs>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:IfElseIfV2.Then>
+                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,1659.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="x:String" Name="v_NombrePDF" />
+                                                          <Variable x:TypeArguments="x:String" Name="v_EncontrarPDF" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Esperar descarga de PDF" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[v_PDFdescarga]" sap:VirtualizedContainerService.HintSize="484,574" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="tmp,dwn">
+                                                          <ui:GetLastDownloadedFile.Body>
+                                                            <ActivityAction>
+                                                              <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PDF'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                                                  <uix:NClick.Target>
+                                                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7496e229-2b0f-408c-9617-493939c58d08" ContentHash="43oCfX_QsEm6P6piSVPoWw" CvElementArea="771, 751, 72, 43" CvTextArea="791, 764, 31, 15" CvTextArgument="PDF" CvType="Button" DesignTimeRectangle="774, 753, 66, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='pdfFile' tag='BUTTON' type='' class='btn btn-orange' aaname='PDF' check:innerText='PDF' /&gt;" Guid="9ac3766e-7261-491b-b239-da795c8dbe0e" InformativeScreenshot="0bd0e5009e2c8e6cd9a2bd94675f48cb.png" Reference="dHlVBlqNnU63xQsMqdfbMw/GvvT8BQDxkeMrDHhZ6S6EQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                                                  </uix:NClick.Target>
+                                                                  <uix:NClick.VerifyOptions>
+                                                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                      <uix:VerifyExecutionOptions.Retry>
+                                                                        <InArgument x:TypeArguments="x:Boolean" />
+                                                                      </uix:VerifyExecutionOptions.Retry>
+                                                                      <uix:VerifyExecutionOptions.Timeout>
+                                                                        <InArgument x:TypeArguments="x:Double" />
+                                                                      </uix:VerifyExecutionOptions.Timeout>
+                                                                    </uix:VerifyExecutionOptions>
+                                                                  </uix:NClick.VerifyOptions>
+                                                                </uix:NClick>
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </ui:GetLastDownloadedFile.Body>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:GetLastDownloadedFile>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="484,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[v_NombrePDF]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">["*-FA-"+v_NSerie+"-"+v_NCorrelativo+".pdf"]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="484,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[v_EncontrarPDF]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[Directory.GetFiles(v_Descarga, v_NombrePDF).FirstOrDefault()]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[v_EncontrarPDF is Nothing]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,424" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                                                          <ui:InterruptibleDoWhile.Body>
+                                                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="468,292" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[v_EncontrarPDF]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">[Directory.GetFiles(v_Descarga, v_NombrePDF).FirstOrDefault()]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </ui:InterruptibleDoWhile.Body>
+                                                        </ui:InterruptibleDoWhile>
+                                                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;PDF - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.pdf&quot;]" DisplayName="Mover PDF a carpeta" sap:VirtualizedContainerService.HintSize="484,196.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[v_EncontrarPDF]" />
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,170" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Se descargo la Factura PDF&quot;]" />
+                                                      </Sequence>
+                                                    </ui:IfElseIfV2.Then>
+                                                  </ui:IfElseIfV2>
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Else>
+                                              <ui:IfElseIfV2.ElseIfs>
+                                                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                              </ui:IfElseIfV2.ElseIfs>
+                                              <ui:IfElseIfV2.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="554,230" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,170" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Ya existe el archivo PDF: &quot;+in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;PDF - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.pdf&quot;]" />
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Then>
+                                            </ui:IfElseIfV2>
+                                            <ui:FileExistsX DisplayName="File Exists" Exists="[v_ExisteXML]" sap:VirtualizedContainerService.HintSize="556,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;XML - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.xml&quot;]" />
+                                            <ui:IfElseIfV2 Condition="[v_ExisteXML]" DisplayName="Ya existe el archivo XML" sap:VirtualizedContainerService.HintSize="556,2406.6666666666665" sap2010:WorkflowViewState.IdRef="IfElseIfV2_8">
+                                              <ui:IfElseIfV2.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="554,1988.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:IfElseIfV2 Condition="[in_XML]" DisplayName="Se necesita descargar XML?" sap:VirtualizedContainerService.HintSize="520,1928.6666666666667" sap2010:WorkflowViewState.IdRef="IfElseIfV2_4">
+                                                    <ui:IfElseIfV2.Else>
+                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="518,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </ui:IfElseIfV2.Else>
+                                                    <ui:IfElseIfV2.ElseIfs>
+                                                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                                    </ui:IfElseIfV2.ElseIfs>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:IfElseIfV2.Then>
+                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,1659.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="si:FileInfo" Name="v_XMLdescarga" />
+                                                          <Variable x:TypeArguments="x:String" Name="v_NombreXML" />
+                                                          <Variable x:TypeArguments="x:String" Name="v_EncontrarXML" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Esperar descarga de PDF" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[v_XMLdescarga]" sap:VirtualizedContainerService.HintSize="484,574" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2" IgnoreFiles="tmp,dwn">
+                                                          <ui:GetLastDownloadedFile.Body>
+                                                            <ActivityAction>
+                                                              <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'XML'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                                                  <uix:NClick.Target>
+                                                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7496e229-2b0f-408c-9617-493939c58d08" ContentHash="EbwJC5WoNk-ha9vHgVcppw" CvElementArea="700, 751, 71, 43" CvTextArea="717, 762, 37, 16" CvTextArgument="XML" CvType="Button" DesignTimeRectangle="703, 753, 68, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='xmlFile' tag='BUTTON' type='' class='btn btn-primary' aaname='XML' check:innerText='XML' /&gt;" Guid="f051c327-5131-4f97-b9c4-2a891d3b80e0" InformativeScreenshot="c021d21ae55e4dbd24036d4e7a689754.png" Reference="dHlVBlqNnU63xQsMqdfbMw/3eUFN9Y-xEqzrcZaL8IeFg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                                                  </uix:NClick.Target>
+                                                                  <uix:NClick.VerifyOptions>
+                                                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                      <uix:VerifyExecutionOptions.Retry>
+                                                                        <InArgument x:TypeArguments="x:Boolean" />
+                                                                      </uix:VerifyExecutionOptions.Retry>
+                                                                      <uix:VerifyExecutionOptions.Timeout>
+                                                                        <InArgument x:TypeArguments="x:Double" />
+                                                                      </uix:VerifyExecutionOptions.Timeout>
+                                                                    </uix:VerifyExecutionOptions>
+                                                                  </uix:NClick.VerifyOptions>
+                                                                </uix:NClick>
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </ui:GetLastDownloadedFile.Body>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:GetLastDownloadedFile>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="484,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[v_NombreXML]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">["*-FA-"+v_NSerie+"-"+v_NCorrelativo+".xml"]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="484,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[v_EncontrarXML]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[Directory.GetFiles(v_Descarga, v_NombreXML).FirstOrDefault()]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[v_EncontrarXML IS Nothing]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,424" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                                                          <ui:InterruptibleDoWhile.Body>
+                                                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="468,292" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[v_EncontrarXML]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">[Directory.GetFiles(v_Descarga, v_NombreXML).FirstOrDefault()]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </ui:InterruptibleDoWhile.Body>
+                                                        </ui:InterruptibleDoWhile>
+                                                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;XML - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.xml&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,196.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[v_EncontrarXML]" />
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,170" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Se descargo la Factura XML&quot;]" />
+                                                      </Sequence>
+                                                    </ui:IfElseIfV2.Then>
+                                                  </ui:IfElseIfV2>
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Else>
+                                              <ui:IfElseIfV2.ElseIfs>
+                                                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                              </ui:IfElseIfV2.ElseIfs>
+                                              <ui:IfElseIfV2.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="554,230" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,170" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Ya existe el archivo XML: &quot;+in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;XML - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.xml&quot;]" />
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Then>
+                                            </ui:IfElseIfV2>
+                                            <ui:FileExistsX DisplayName="File Exists" Exists="[v_ExisteCDR]" sap:VirtualizedContainerService.HintSize="556,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;CDR - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.xml&quot;]" />
+                                            <ui:IfElseIfV2 Condition="[v_ExisteCDR]" DisplayName="Ya existe el archivo CDR" sap:VirtualizedContainerService.HintSize="556,2406.6666666666665" sap2010:WorkflowViewState.IdRef="IfElseIfV2_9">
+                                              <ui:IfElseIfV2.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="554,1988.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:IfElseIfV2 Condition="[in_CDR]" DisplayName="Se necesita descaga de CDR" sap:VirtualizedContainerService.HintSize="520,1928.6666666666667" sap2010:WorkflowViewState.IdRef="IfElseIfV2_5">
+                                                    <ui:IfElseIfV2.Else>
+                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="518,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </ui:IfElseIfV2.Else>
+                                                    <ui:IfElseIfV2.ElseIfs>
+                                                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                                    </ui:IfElseIfV2.ElseIfs>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:IfElseIfV2.Then>
+                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,1659.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="si:FileInfo" Name="v_CDRdescarga" />
+                                                          <Variable x:TypeArguments="x:String" Name="v_NombreCDR" />
+                                                          <Variable x:TypeArguments="x:String" Name="v_EncontrarCDR" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Esperar descarga de PDF" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[v_CDRdescarga]" sap:VirtualizedContainerService.HintSize="484,574" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_3" IgnoreFiles="tmp,dwn">
+                                                          <ui:GetLastDownloadedFile.Body>
+                                                            <ActivityAction>
+                                                              <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CDR'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                                                  <uix:NClick.Target>
+                                                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7496e229-2b0f-408c-9617-493939c58d08" ContentHash="xkDgSHIMWUmQPx-1bm8kug" CvElementArea="841, 751, 73, 43" CvTextArea="858, 764, 37, 15" CvTextArgument="CDR" CvType="Button" DesignTimeRectangle="844, 753, 68, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='cdrFile' tag='BUTTON' type='' class='btn btn-primary' aaname='CDR' check:innerText='CDR' /&gt;" Guid="3269e563-8c1f-466b-b786-475dcfb7a775" InformativeScreenshot="7b28d0ec7b7eb92c00be39334091b9c8.png" Reference="dHlVBlqNnU63xQsMqdfbMw/tw8J3UhBzkWYXUT-gbGWOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                                                  </uix:NClick.Target>
+                                                                  <uix:NClick.VerifyOptions>
+                                                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                      <uix:VerifyExecutionOptions.Retry>
+                                                                        <InArgument x:TypeArguments="x:Boolean" />
+                                                                      </uix:VerifyExecutionOptions.Retry>
+                                                                      <uix:VerifyExecutionOptions.Timeout>
+                                                                        <InArgument x:TypeArguments="x:Double" />
+                                                                      </uix:VerifyExecutionOptions.Timeout>
+                                                                    </uix:VerifyExecutionOptions>
+                                                                  </uix:NClick.VerifyOptions>
+                                                                </uix:NClick>
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </ui:GetLastDownloadedFile.Body>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:GetLastDownloadedFile>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="484,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[v_NombreCDR]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">["R-*-FA-"+v_NSerie+"-"+v_NCorrelativo+".xml"]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="484,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[v_EncontrarCDR]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[Directory.GetFiles(v_Descarga, v_NombreCDR).FirstOrDefault()]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[v_EncontrarCDR is Nothing]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,424" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+                                                          <ui:InterruptibleDoWhile.Body>
+                                                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="468,292" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[v_EncontrarCDR]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">[Directory.GetFiles(v_Descarga, v_NombreCDR).FirstOrDefault()]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </ui:InterruptibleDoWhile.Body>
+                                                        </ui:InterruptibleDoWhile>
+                                                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;CDR - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.xml&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,196.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[v_EncontrarCDR]" />
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,170" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Se descargo la Factura CDR&quot;]" />
+                                                      </Sequence>
+                                                    </ui:IfElseIfV2.Then>
+                                                  </ui:IfElseIfV2>
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Else>
+                                              <ui:IfElseIfV2.ElseIfs>
+                                                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                              </ui:IfElseIfV2.ElseIfs>
+                                              <ui:IfElseIfV2.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="554,230" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,170" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Ya existe el archivo CDR: &quot;+in_rutaFactura+v_RazonSocial+&quot;\&quot;+in_rutaFecha+&quot;\&quot;+in_NPedido+&quot;\&quot;+&quot;CDR - &quot;+v_NSerie+&quot; - &quot;+v_NCorrelativo+&quot;.xml&quot;]" />
+                                                </Sequence>
+                                              </ui:IfElseIfV2.Then>
+                                            </ui:IfElseIfV2>
+                                            <Assign sap:VirtualizedContainerService.HintSize="556,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[out_SinFactura]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cerrar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="556,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="249b27ea-88bd-41c6-90d2-9e591c87234f" Version="V4">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="fdc9a693-d040-4925-8b5e-ac50a52c4d1f" ContentHash="dAweB0D8iUaQStkoqOFn7A" CvElementArea="1353, 824, 86, 44" CvTextArea="1373, 837, 48, 15" CvTextArgument="Cerrar" CvType="Button" DesignTimeRectangle="1356, 827, 82, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Cerrar' parentid='myModal' tag='BUTTON' type='button' /&gt;" Guid="37626b7f-91af-454d-9c4f-e7b46ff99cfe" InformativeScreenshot="ac4a142f8024dd0723b1c7c95a3028a6.png" Reference="dHlVBlqNnU63xQsMqdfbMw/yBTRlglxVky-ZmF-qI417w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, CV" Version="V5" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                              <uix:NClick.VerifyOptions>
+                                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                  <uix:VerifyExecutionOptions.Retry>
+                                                    <InArgument x:TypeArguments="x:Boolean" />
+                                                  </uix:VerifyExecutionOptions.Retry>
+                                                  <uix:VerifyExecutionOptions.Timeout>
+                                                    <InArgument x:TypeArguments="x:Double" />
+                                                  </uix:VerifyExecutionOptions.Timeout>
+                                                </uix:VerifyExecutionOptions>
+                                              </uix:NClick.VerifyOptions>
+                                            </uix:NClick>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="556,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[FIN] Descargar Factura en CARBAJAL&quot;]" />
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="bb9fc092-0715-4816-8863-572c8e0e5959" ContentHash="x7vGjUyjiUiXkOI14HuHOw" CvElementArea="1413, 271, 29, 28" CvTextArea="458, 273, 214, 25" CvTextArgument="Detalle Comprobante" CvType="CloseButton" DesignTimeRectangle="442, 253, 1013, 67" DesignTimeScaleFactor="1.125" FullSelectorArgument="&lt;webctrl class='modal-header' parentid='myModal' tag='DIV' /&gt;" Guid="07568a3e-f486-4747-b110-cb8023284bda" InformativeScreenshot="e014ae2b84ec0c384fd404713987c157.png" Reference="dHlVBlqNnU63xQsMqdfbMw/46ZwoMEqu0iBs3bI4VK94g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, CV" Version="V5" Visibility="Interactive" />
+                                        </uix:NCheckState.Target>
+                                      </uix:NCheckState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="El objetivo no aparece." sap:VirtualizedContainerService.HintSize="752,2954" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="v_Registro" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="718,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;No existe la Factura en Carbajal&quot;]" />
+                                      <ui:ReadCell WorkbookPathResource="{x:Null}" Cell="[&quot;T&quot;+in_NEncontrar.ToString]" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="718,120" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="REGISTRO" WorkbookPath="[In_rutaArchivoFactura]">
+                                        <ui:ReadCell.Result>
+                                          <OutArgument x:TypeArguments="x:String">[v_Registro]</OutArgument>
+                                        </ui:ReadCell.Result>
+                                      </ui:ReadCell>
+                                      <Assign sap:VirtualizedContainerService.HintSize="718,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[v_Registro]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[If(String.IsNullOrEmpty(v_Registro), "", v_Registro)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:IfElseIfV2 Condition="[v_Registro.Contains(&quot;Falta Factura&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="718,2474.6666666666665" sap2010:WorkflowViewState.IdRef="IfElseIfV2_10">
+                                        <ui:IfElseIfV2.Else>
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="716,1884" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="682,1536.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                                              <TryCatch.Try>
+                                                <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="680,1042" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="646,982" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:03">
+                                                    <ui:RetryScope.ActivityBody>
+                                                      <ActivityAction>
+                                                        <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="604,780.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope" ExistingProcessAction="ForceKill" sap:VirtualizedContainerService.HintSize="570,720.6666666666666" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" LaunchTimeout="60000" ShowExcelWindow="False">
+                                                            <ueab:ExcelProcessScopeX.Body>
+                                                              <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                                                                </ActivityAction.Argument>
+                                                                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="536,610.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,550.6666666666666" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[In_rutaArchivoFactura]">
+                                                                    <ueab:ExcelApplicationCard.Body>
+                                                                      <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                                                        <ActivityAction.Argument>
+                                                                          <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                                                                        </ActivityAction.Argument>
+                                                                        <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="468,247.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <ueab:WriteCellX Cell="[Excel.Sheet(&quot;REGISTRO&quot;).Cell(&quot;T&quot;+in_NEncontrar.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,187.33333333333334" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[v_Registro.ToString+&quot;, Falta Factura&quot;]" />
+                                                                        </Sequence>
+                                                                      </ActivityAction>
+                                                                    </ueab:ExcelApplicationCard.Body>
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                  </ueab:ExcelApplicationCard>
+                                                                </Sequence>
+                                                              </ActivityAction>
+                                                            </ueab:ExcelProcessScopeX.Body>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </ueab:ExcelProcessScopeX>
+                                                        </Sequence>
+                                                      </ActivityAction>
+                                                    </ui:RetryScope.ActivityBody>
+                                                    <ui:RetryScope.Condition>
+                                                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                    </ui:RetryScope.Condition>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:RetryScope>
+                                                </Sequence>
+                                              </TryCatch.Try>
+                                              <TryCatch.Catches>
+                                                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                                  <ActivityAction x:TypeArguments="s:Exception">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="680,230" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="646,170" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Error" Message="[&quot;No se logro Escribir en el Excel de Facturacion que falta la Factura&quot;]" />
+                                                    </Sequence>
+                                                  </ActivityAction>
+                                                </Catch>
+                                              </TryCatch.Catches>
+                                              <TryCatch.Finally>
+                                                <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="680,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Sequence>
+                                              </TryCatch.Finally>
+                                            </TryCatch>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="682,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Como no se encontro la factura se termino con el proceso&quot;]" />
+                                            <Assign sap:VirtualizedContainerService.HintSize="682,108" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[out_SinFactura]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </ui:IfElseIfV2.Else>
+                                        <ui:IfElseIfV2.ElseIfs>
+                                          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                        </ui:IfElseIfV2.ElseIfs>
+                                        <ui:IfElseIfV2.Then>
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="716,409.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="682,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Como no se encontro la factura se termino con el proceso&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="682,170" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;[INICIO] Busqueda de Facturas&quot;]" />
+                                          </Sequence>
+                                        </ui:IfElseIfV2.Then>
+                                      </ui:IfElseIfV2>
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="fcffd995-3f01-4f82-aa32-0764887d3d8f" ContentHash="k8GHxfYE60u0MZd6UsaiZw" CvTextArea="324, 797, 147, 16" CvTextArgument="Mostrando 1 a 1 de 1" CvType="Text" DesignTimeRectangle="327, 798, 144, 16" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='pagination-info' tag='SPAN' type='' aaname='Mostrando * a * de *' check:innerText='Mostrando * a * de *' /&gt;" Guid="8df9828d-266e-49cc-a6db-502d242550b5" InformativeScreenshot="2f22f417be756ba9c8dda4bfc4c86b9f.png" Reference="dHlVBlqNnU63xQsMqdfbMw/wxaaHhiQtkaemwaGZtJKIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="fcffd995-3f01-4f82-aa32-0764887d3d8f" CvTextArea="324, 836, 125, 19" CvTextArgument="Total de registros:" CvType="Text" DesignTimeRectangle="327, 837, 126, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Total de registros: ' tag='SPAN' type='' class='' check:innerText='Total de registros:' /&gt;" Guid="4b59ba73-bb8c-4ab3-9bfe-a4be01ca03f7" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="nmGBla6kmUujiLv0b9xLRA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAGoklEQVRYR52WD1BT9x3AI+j8c6taJaK2aqdQ113XuXW3Hv5jtlA9xf050Tnnxt8Gykk7q+6OuioQUBRo1Eq71onr2M5aytQBovIvhEACIQkoIIQ/IYCAQKHnKq2F8tnlJWAIAUPf3efy3l2Sz+e93/e9RIQuFc6shFjR1IgRQbQN5uPYaaBPZSqbiA9esH7YSczvPTYb/vZjuOgHn/4WUtdC4kKI+S4BJ54cL5kIqSv8cxOokqEhG1rkfGtUMNiYz6D2Hwz+J5ABTTr3+4a4//nDcXz9YMjeP4UA6QzI2GMRtyoE+XBLIV23dTRra2nW3cGoq0GbVccH+3Sc3K0icY8Nv1fxfoSWyvx73yFAOh0u74WmG2CSQ0uhgDmgvbKKO2oDdWX1Ag3aDvI+NhK9VcFbL+Vx0OsR5uOEXaX03h2YQsAE8jEBVrkQUNFBU2U/BWktxPgVC+JD6/ItrM3nsI+clttfOBkwidwSIKe9anxAo67PccTafP7q62zAY+TCADblYiorpa7cZgmsAQ4jnA5wQk5zHoNXQrnyxusUZ6gxaBrGBdhHHPDKcyLASTn/DWZIOpv3NvnyzrY4Si6rMGgM4wLsIyafAWfkxlzIDIb4mQzFuJDis5mgVWHE/EpK6RUVjfouGnX94yKaq/q5fq5ZiJggwAUydk8qH27O46sMCQ+OzOHBYVfuv/09krx92fPMa/zhmWCith6l9GoVTZW9NGi7R2nU91BTcpfzBxVEvXwZbZmKri/1dN7XWQPMj9fUdWDInFBOc66w5nf2uaMLWog+xI2KIDcin/8l6+fvxPtJfzbM38HBLUdQflZKvaZxFE2OllOhZ5H8MJLwNeHEp60muXgBSUULrQHmS18UC63FE8q5GsSgdA7VkgWUB4jRBIopC1hExI+88Zrnz/r5OwT8lwXwF+8o3gtP4cP95zgb8T5v+75DiKeEUM8wJD8J4sgFd+IKRUjzRYhImAeyp6E23fHZC/JAYc0Ho12oCVtIRYCYikAx5eaA57zxmuvPunk7WDffn53LgwjxCCN4pWSUkFVhhHqGE+oRjuSFkNGAOEvAXPjoRWi6yWBLEQ9t+NpYyL3M1+mIf4KO2Jm0xcxBHr6YnKCl5AQv5VrgUt5Ys56ti7fjt8RP4E/P7yL8pb0OCfvFXiK8f8fRNDf7gJ8x3HSTJpMGnUmP3oquRYssK56XT2xi4/GNbDzmzbMHvFkeuUHgB5EbSPjjanJ3LuP6LgspiWKOps8l+tIEpD+B9IarILcGWJZguDadulYdKlMV6lFuoTDqeCsrCY+Tfiw/voVZh15F9KaPwPQ3fUh6zQN9oGUgK4LEXPj7bGLlIqQFIuIKLK8j+6NY5ZYAYQhdGZZHU9emtwuoosx0C6VRy6HsZDxP+DHroK9NwCtCgC7ATRhKM6kfzUJWsoQr1XvJNRwgqzaUlFJPYeBsxY8CZCvg+PcZTttMfaMSVWs1atNt1K1WhP1qlC2VHMo+xbyorbj82QfX/b7M3O/DyQgPyiVuqCRiSiULuPbperQd5zD1F9HaX0xrv4Kark/4t34zcfkuDgLuVkC7modtGi4YesjpHEDR/YAiOxTdAxR09nMgK4WVx/x4WrqFFfGbibzwFGc/m8HpdFfSb6ylznQRU7+Clr7CUcwxhp5MPqncRrxdhGjkkfjwW/hNBezSwo1ukPdCoR3y3iGUrXeIypGxOtGPVSdeJTTDXVjjc5oXudWVJshs5SOYr0ZRczQJhbMmDtimgWnZsEfnOELeM4iqzUCJUUdUzimeS9pGcLqY85qfcqvTLB975rZXQG1K5oxy2bhZGBPgpwFRFsy45jjCElBPmamKkhY9h6/LiM3bzu3Ojx8rP22W5zkaQgcBomzHESMBalOlcHeUGLXo797E1C8fJ7bIFahNMk4rlzuUTxrgKMI2wHKLVlHfXTJOPHLmZa0yzihXTCh/bIB9RFHv2AAzdQ4CnJWPCRgGQqpAlGmNsGF6NuzWwfV7IwGPHlT2AebL7qx8TIB5035huRVXFcJKWwrgWTlE1X6Dur0GbVslFW16Ktp0GLqVFnFfkXDmKlMiZyZZc3vGBJi3L4eg/StotaHN+tr4vz6u1u6jxJhMQ08uzZ+bJ9983xdQ3XWRzNpQ3lW4Oy23/B+YwjbwTS8fqteQUDib8+U/51Lldi5V/Zp/6V7hlPIppPnTBLn5i0ewl47K80TCb8QUA/pI0/nwrmKRFbGVRciK3ZEVL7FjMckKsUNSNV7U91zl/5744av1XmO7AAAAAElFTkSuQmCC" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="b3528d920c394aca2d6063adcb108304.jpg" Reference="dHlVBlqNnU63xQsMqdfbMw/O8zClEYfwkKgUYZzXUlQrg" Selector="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" Url="https://ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" Version="V2" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1576,697.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1542,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Error" Message="[&quot;Algo fallo al buscar las facturas en Carbajal. Se cerrara Chrome y se volvera a hacer Login en Carbajal&quot;]" />
+                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="1324,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_Carbajal - Invoke Workflow File (Data\Input\Login_Carbajal.xaml)" sap:VirtualizedContainerService.HintSize="1542,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" LogEntry="WithArguments" LogExit="WithArguments" Timeout="00:05:00" UnSafe="False" WorkflowFileName="Data\Input\Login_Carbajal.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <Throw Exception="[New System.Exception(&quot;Ocurrió un error cuando se buscaba y descargaba la Factura, Se volvio a iniciar el login de Carbajal&quot;)]" sap:VirtualizedContainerService.HintSize="1542,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                    <TryCatch.Finally>
+                      <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="1576,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </TryCatch.Finally>
+                  </TryCatch>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1470,349.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_46">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1188,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;No se pudo realizar la Descarga de las Facturas&quot;]" />
+              <Throw Exception="[New System.Exception(&quot;Ocurrió un error al obtener la Factura de Carbajal. La transacción tuvo un error.&quot;)]" sap:VirtualizedContainerService.HintSize="494,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="528,90" sap2010:WorkflowViewState.IdRef="Sequence_47">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

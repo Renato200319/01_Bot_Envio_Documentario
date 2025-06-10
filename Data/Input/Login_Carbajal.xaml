@@ -1,0 +1,389 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_Carbajal" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Login_Carbajal_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login_Carbajal" sap:VirtualizedContainerService.HintSize="1170,5290" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1170,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[INICIO] Login de Carbajal&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1170,5090.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="1168,4662" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1134,4602" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="4" RetryInterval="[TimeSpan.FromSeconds(1)]">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="1092,4400.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1058,4340.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="1056,3569.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Todas Mis Facturas" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3509.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="988,3267.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="v_usarname" />
+                                  <Variable x:TypeArguments="ss:SecureString" Name="v_contraseña" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Credenciales_Carbajal" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="954,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[v_contraseña]" Username="[v_usarname]" />
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Usuario'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Text="[v_usarname]" Version="V4">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="ce88e628-b905-4876-8fc2-d4071f955465" ContentHash="nG47I8LkWEeCIjuJfFQnig" DesignTimeRectangle="922, 581, 420, 60" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='form-control valid' aaname='Ingrese su usuario. Si su usuario es un correo ingrese la cuenta de correo electrónico.' /&gt;" Guid="df343b2a-221e-4477-8b81-ec873bf3c233" InformativeScreenshot="164d953745804a08d5479c7f150d60fd.png" Reference="dHlVBlqNnU63xQsMqdfbMw/FU9MCDcjREqazodHi4WGDQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="ce88e628-b905-4876-8fc2-d4071f955465" DesignTimeRectangle="431, 536, 1402, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='                     Usuario:' parentid='form' tag='DIV' /&gt;" Guid="ad2f38b7-62c9-42b8-8c9e-6df958a8e4ff" SearchSteps="Selector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.VerifyOptions>
+                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                    </uix:VerifyExecutionTypeIntoOptions>
+                                  </uix:NTypeInto.VerifyOptions>
+                                </uix:NTypeInto>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Contraseña'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,289.3333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_3" IsPassword="True" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" SecureText="[v_contraseña]" Version="V4">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="74925f8b-ddf8-421e-8da7-aab55c60dd76" ContentHash="n3hNv8ywd0aZmq82yux7sA" DesignTimeRectangle="922, 693, 420, 60" DesignTimeScaleFactor="1.5" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" Guid="85c4eb12-611f-47da-91f6-0b56b48ef6c6" InformativeScreenshot="fd58c2ac2c135e83b6db08b4b7dd2477.png" Reference="dHlVBlqNnU63xQsMqdfbMw/pmYn2nwk_kWX5mqlMXz3HQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="74925f8b-ddf8-421e-8da7-aab55c60dd76" DesignTimeRectangle="431, 641, 1402, 37" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Contraseña:' parentid='form' tag='DIV' /&gt;" Guid="898fb030-6a95-4653-a370-72fa19d9a8b1" SearchSteps="Selector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.VerifyOptions>
+                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                    </uix:VerifyExecutionTypeIntoOptions>
+                                  </uix:NTypeInto.VerifyOptions>
+                                </uix:NTypeInto>
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="954,123.33333333333333" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'No soy un robot'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="380cd099-ce8e-4998-bb4d-dfe366b830e0" ContentHash="Jw5ENJT7EUmg1JscRVpxhw" CvElementArea="873, 656, 34, 35" CvType="CheckBox" DesignTimeRectangle="874, 657, 31, 31" DesignTimeScaleFactor="1.125" FuzzySelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl aria-role='presentation' tag='DIV' type='' class='recaptcha-checkbox-border' aaname='' /&gt;" Guid="c23d066d-0dce-48e5-9d8a-f3899d47f992" InformativeScreenshot="de7ab9381c73af5cb09119a2371e50de.png" Reference="dHlVBlqNnU63xQsMqdfbMw/NjRrT3tzTEm-mIPfXt6uCQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NCheckState DisplayName="Comprobar el estado de la aplicación 'DIV'" sap:VirtualizedContainerService.HintSize="954,966" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Version="V4">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="El objetivo aparece." sap:VirtualizedContainerService.HintSize="450,712.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Aparecio el reCATCHAP&quot;]" />
+                                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Version="V4">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="bf5fcedd-f133-4746-8188-05cce14042f5" ContentHash="Fm_5p5i8-0CPNSSDx7cVIA" CvElementArea="1037, 958, 44, 41" CvType="Icon" DesignTimeRectangle="1033, 950, 54, 54" DesignTimeScaleFactor="1.125" FuzzySelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl isleaf='1' parentid='rc-imageselect' tabindex='2' tag='DIV' type='' class='button-holder help-button-holder' aaname='' /&gt;" Guid="f3ea4be5-db1d-4804-9a89-8b0ce0b4101f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKTSURBVGhD7djvS1NRHMdx/8b+ix4VReQiRPqBFeWDwqxMgsp+PQgqKFq4RjZxzmXTsohEi2htrObY3O/5iW9ra/d7drm72zkHPZ03fB84z7nXF97dqxvCf9IQf8HULNS0LNS0LNS0LNS0LNS0LNS0LNS01EI/PgGWpoBgAAgOA4uTwNpDoFrgK5WnBppPAqFR4PH+7vP8KLC1yXcpTT60VhRhbkNrNSUf+vaWCHIbWqspudDksojxGtqjIbnQD49EiNfQHg3JhUYnRIjX0B4NyYUmZkSI19AeDcmFbrwUIV5DezQkF5peEyFeQ3s0JBdK+bl8NV22lHwoFbsqovhEL/NdSlMDpX6sAKEREUjz5TVfrTx1UKpWAn6tA5uvgI0wkPkElPN8lZbUQiUXSb3nL/XcnoGef/cA+0KjfWP3BLSFbE0/WLnQ6nbz/bh6r/kPd+QCMDsCPD0IPDsEhE8BkXGgkOY7XePIc6v30cAOX+bZ4FDCfYsCS9fFuyufuTGglOVHcI0jz6zcRa1R58t6ajDo+izwIiCCug39Jiv/7rjVes1xKB5Hnk7MoNyo8mU91z90flzEuM3Cpeaj5m+5yjbGEnf+YLrFkScTt1GqV/gyX/UHnTsrYtyG/kraabS3pkpZBOLTbQTHcuTo8k3kq4N/5OIf6vdThMUrDujXQhoHohMOTAvLkcff3ECO7gES8g/9HBQxXrNw0XHpumE7vz4Wn0a24z09aP6h9Fkth/Qy9Kjp+MG7YVszHJ9CppxznHbQ9EFp2OOlG/ZI7BrSpS3HKWWkF0oTPgEUUu3DdWIPxyaRLP50nE5W/qEKamG/FzP8W9LaFVCKsCrbNVDVWahpWahpWahpWahpWahpWahp/QYR9RXfrl5TOAAAAABJRU5ErkJggg==" InformativeScreenshot="803c98d4e7fa55657d8b8aa2c7903983.png" Reference="dHlVBlqNnU63xQsMqdfbMw/7aicOrLtk0ypke5hINUc9w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                        <uix:NClick.VerifyOptions>
+                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                            <uix:VerifyExecutionOptions.Retry>
+                                              <InArgument x:TypeArguments="x:Boolean" />
+                                            </uix:VerifyExecutionOptions.Retry>
+                                            <uix:VerifyExecutionOptions.Timeout>
+                                              <InArgument x:TypeArguments="x:Double" />
+                                            </uix:VerifyExecutionOptions.Timeout>
+                                          </uix:VerifyExecutionOptions>
+                                        </uix:NClick.VerifyOptions>
+                                      </uix:NClick>
+                                      <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,117.33333333333333" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="El objetivo no aparece." sap:VirtualizedContainerService.HintSize="450,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;No aparecio el reCATCHAP&quot;]" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="13557ad2-b427-43ce-bf5d-c97d2ec86e75" ContentHash="GGfvBq5JgUeJbHnl_DYvuw" CvElementArea="1037, 950, 43, 40" CvType="Icon" DesignTimeRectangle="607, 938, 72, 72" DesignTimeScaleFactor="1.5" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl type='' isleaf='1' parentid='*' tabindex='0' tag='DIV' class='button-holder help-button-holder' aaname='' /&gt;" Guid="0cdda87f-0db3-4793-83f9-06a604641d7c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKTSURBVGhD7djvS1NRHMdx/8b+ix4VReQiRPqBFeWDwqxMgsp+PQgqKFq4RjZxzmXTsohEi2htrObY3O/5iW9ra/d7drm72zkHPZ03fB84z7nXF97dqxvCf9IQf8HULNS0LNS0LNS0LNS0LNS0LNS0LNS01EI/PgGWpoBgAAgOA4uTwNpDoFrgK5WnBppPAqFR4PH+7vP8KLC1yXcpTT60VhRhbkNrNSUf+vaWCHIbWqspudDksojxGtqjIbnQD49EiNfQHg3JhUYnRIjX0B4NyYUmZkSI19AeDcmFbrwUIV5DezQkF5peEyFeQ3s0JBdK+bl8NV22lHwoFbsqovhEL/NdSlMDpX6sAKEREUjz5TVfrTx1UKpWAn6tA5uvgI0wkPkElPN8lZbUQiUXSb3nL/XcnoGef/cA+0KjfWP3BLSFbE0/WLnQ6nbz/bh6r/kPd+QCMDsCPD0IPDsEhE8BkXGgkOY7XePIc6v30cAOX+bZ4FDCfYsCS9fFuyufuTGglOVHcI0jz6zcRa1R58t6ajDo+izwIiCCug39Jiv/7rjVes1xKB5Hnk7MoNyo8mU91z90flzEuM3Cpeaj5m+5yjbGEnf+YLrFkScTt1GqV/gyX/UHnTsrYtyG/kraabS3pkpZBOLTbQTHcuTo8k3kq4N/5OIf6vdThMUrDujXQhoHohMOTAvLkcff3ECO7gES8g/9HBQxXrNw0XHpumE7vz4Wn0a24z09aP6h9Fkth/Qy9Kjp+MG7YVszHJ9CppxznHbQ9EFp2OOlG/ZI7BrSpS3HKWWkF0oTPgEUUu3DdWIPxyaRLP50nE5W/qEKamG/FzP8W9LaFVCKsCrbNVDVWahpWahpWahpWahpWahpWahp/QYR9RXfrl5TOAAAAABJRU5ErkJggg==" InformativeScreenshot="0a6860a4c4fd0397a2b70aeb048139cd.png" Reference="dHlVBlqNnU63xQsMqdfbMw/dhs6G3LMh0eQorBv4_LiMw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="954,124" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ingresar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/FE/account/login" CVScreenId="4aea7510-953f-4de6-a51c-0f7101fe2f34" ContentHash="6X-yD-p2okS7bgnzEaQ18w" DesignTimeRectangle="1070, 762, 124, 52" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='btn btn-primary' aaname='Ingresar' check:innerText='Ingresar' /&gt;" Guid="4e709154-827a-4c96-ba1d-354e4bed92b9" InformativeScreenshot="f67dce2744da5da3bf054e42fd1b3e62.png" Reference="dHlVBlqNnU63xQsMqdfbMw/k69ayvAf6EqkHMO0I25aJg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                                <uix:NCheckState DisplayName="Comprobar el estado de la aplicación 'Filtros de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,774" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8d97d806-af0c-4e03-b0fe-1d3f0912bcaa" Version="V4">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="El objetivo aparece." sap:VirtualizedContainerService.HintSize="450,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[FIN] El login a Carbajal fue exitoso&quot;]" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="El objetivo no aparece." sap:VirtualizedContainerService.HintSize="450,527.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;No se pudo hacer login a Carbajal, se cerrara Chrome y se volvera a ejecutar&quot;]" />
+                                      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="416,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
+                                      <Throw Exception="[New System.Exception(&quot;Ocurrió un error al hacer Login en Carbajal&quot;)]" sap:VirtualizedContainerService.HintSize="416,116.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7133dadd-d969-4223-84dd-a1f9c8ab469e" ContentHash="y8Us2Vq47k-GmExlJbDCwA" CvTextArea="479, 479, 232, 31" CvTextArgument="Filtros de Búsqueda" CvType="Text" DesignTimeRectangle="446, 476, 1402, 36" DesignTimeScaleFactor="1.5" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='panel-title' tag='H4' type='' aaname='              Filtros de Búsqueda         ' check:innerText='Filtros de Búsqueda' /&gt;" Guid="818b6697-7a52-4ab0-a710-65fae6208df6" InformativeScreenshot="6dcf6415ae369ededac05708c0b72cfe.png" Reference="dHlVBlqNnU63xQsMqdfbMw/1pu-Inr9SkqI_riyc5stuQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="7133dadd-d969-4223-84dd-a1f9c8ab469e" CvTextArea="474, 342, 430, 43" CvTextArgument="Comprobantes Emitidos" CvType="Text" DesignTimeRectangle="409, 333, 1477, 60" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' tag='H2' class='' aaname='Comprobantes Emitidos' check:innerText='Comprobantes Emitidos' /&gt;" Guid="603cc39d-b74a-43a5-b50e-0f6a2f52f083" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="JuKYt-xy7kSppnDkieCj3Q" IconBase64="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" InformativeScreenshot="386b7ccdebad7bccdd44044d082e7265.jpg" Reference="dHlVBlqNnU63xQsMqdfbMw/e0Rv5_jqaUevntjG0YKXJQ" Selector="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" Url="https://ww2.todasmisfacturas.com.pe/cloud/FE/account/login" Version="V2" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1056,516.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1022,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Algo fallo al buscar las facturas en Carbajal. Se cerrara Chrome y se volvera a hacer Login en Carbajal&quot;]" />
+                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="1022,167.33333333333334" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="chrome" />
+                            <Throw Exception="[New System.Exception(&quot;Ocurrio un error al ingresar a Carbajal&quot;)]" sap:VirtualizedContainerService.HintSize="1022,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                    <TryCatch.Finally>
+                      <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="1056,90" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </TryCatch.Finally>
+                  </TryCatch>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1168,174" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Throw Exception="[New System.Exception(&quot;Ocurrió un error al hacer Login en Carbajal&quot;)]" sap:VirtualizedContainerService.HintSize="1134,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="1168,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
