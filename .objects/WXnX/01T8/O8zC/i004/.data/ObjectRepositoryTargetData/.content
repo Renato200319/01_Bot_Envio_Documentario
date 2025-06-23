@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="8hhUPd6JE0iwWnj1ky-dxA" Reference="dHlVBlqNnU63xQsMqdfbMw/i004O-lPvkSufDEGqV1CRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="sGa19W8o_02dbTDGWmbjtg" Reference="dHlVBlqNnU63xQsMqdfbMw/i004O-lPvkSufDEGqV1CRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="45a68731-bf83-4b1e-8d9c-9410c29604b7" CvTextArea="929, 696, 13, 16" CvTextArgument="[v_dia]" CvType="Text" DesignTimeRectangle="918, 689, 36, 33" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='day' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_dia)]" Guid="ffeb82df-54f0-4bd5-b774-1c4ce042de40" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="5e1142f7f0ddc797d6b516c71b8bec2f.png" xmlns="">0JVphqDwPXkWbl-4UkpEhfA</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="45a68731-bf83-4b1e-8d9c-9410c29604b7" CvTextArea="929, 696, 13, 16" CvTextArgument="[v_dia]" CvType="Text" DesignTimeRectangle="918, 689, 36, 33" DesignTimeScaleFactor="1.125" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='« * » Do Lu Ma Mi Ju Vi Sa Hoy Limpiar' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='day' aaname='{0}' check:innerText='{0}' /&gt;&quot;, v_dia)]" Guid="ffeb82df-54f0-4bd5-b774-1c4ce042de40" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="5e1142f7f0ddc797d6b516c71b8bec2f.png" xmlns="">0__GU_OcSrkmBguIzkpMBbQ</imageRef>
     </TargetAnchorable>
     <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
       <ObjectRepositoryVariableData Name="v_dia" />
     </scg:List>
-    <x:String x:Key="ActivityType">None</x:String>
+    <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>
 </ObjectRepositoryTargetData>

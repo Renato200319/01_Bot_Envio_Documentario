@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "resources": [
+    {
+      "resource": "asset",
+      "metadata": {
+        "folderPath": {
+          "defaultValue": "Shared",
+          "isExpression": false
+        },
+        "name": {
+          "defaultValue": "Credenciales_Carbajal",
+          "isExpression": false
+        },
+        "BindingsVersion": {
+          "defaultValue": "2.2",
+          "isExpression": false
+        }
+      }
+    },
+    {
+      "resource": "asset",
+      "metadata": {
+        "folderPath": {
+          "defaultValue": "Shared",
+          "isExpression": false
+        },
+        "name": {
+          "defaultValue": "Credenciales_Carbajal",
+          "isExpression": false
+        },
+        "BindingsVersion": {
+          "defaultValue": "2.2",
+          "isExpression": false
+        }
+      }
+    },
+    {
+      "resource": "queue",
+      "metadata": {
+        "folderPath": {
+          "defaultValue": "Shared",
+          "isExpression": false,
+          "displayName": "Ruta de la carpeta"
+        },
+        "name": {
+          "defaultValue": "01_Envio_Documento_Clientes",
+          "isExpression": false,
+          "displayName": "Nombre de cola"
+        },
+        "BindingsVersion": {
+          "defaultValue": "2.2",
+          "isExpression": false
+        }
+      }
+    }
+  ]
+}

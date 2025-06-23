@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="xkDgSHIMWUmQPx-1bm8kug" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="2eYNajcabEmhBmpCB-InWg" Reference="dHlVBlqNnU63xQsMqdfbMw/tw8J3UhBzkWYXUT-gbGWOw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7496e229-2b0f-408c-9617-493939c58d08" CvElementArea="841, 751, 73, 43" CvTextArea="858, 764, 37, 15" CvTextArgument="CDR" CvType="Button" DesignTimeRectangle="844, 753, 68, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='cdrFile' tag='BUTTON' type='' class='btn btn-primary' aaname='CDR' check:innerText='CDR' /&gt;" Guid="3269e563-8c1f-466b-b786-475dcfb7a775" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="7b28d0ec7b7eb92c00be39334091b9c8.png" xmlns="">0rBD05ZbPOUq0lHKyz9kUnQ</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="ww2.todasmisfacturas.com.pe/cloud/PE/cdpsemitidos/index" CVScreenId="7496e229-2b0f-408c-9617-493939c58d08" CvElementArea="841, 751, 73, 43" CvTextArea="858, 764, 37, 15" CvTextArgument="CDR" CvType="Button" DesignTimeRectangle="844, 753, 68, 39" DesignTimeScaleFactor="1.125" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='cdrFile' tag='BUTTON' type='' class='btn btn-primary' aaname='CDR' check:innerText='CDR' /&gt;" Guid="3269e563-8c1f-466b-b786-475dcfb7a775" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todas Mis Facturas' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7b28d0ec7b7eb92c00be39334091b9c8.png" xmlns="">0aRGFdJfksU6-FI56Wy8y-A</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

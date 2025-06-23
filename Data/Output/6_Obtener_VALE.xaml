@@ -114,31 +114,31 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_6_Obtener_VALE" sap:VirtualizedContainerService.HintSize="944,2661.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_6_Obtener_VALE" sap:VirtualizedContainerService.HintSize="1204,622.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="598,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[INICIO] Obtener VALE&quot;]" />
-    <Sequence DisplayName="No se encontro la Orden de Cerca" sap:VirtualizedContainerService.HintSize="598,2462" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[INICIO] Obtener VALE&quot;]" />
+    <Sequence DisplayName="No se encontro el VALE" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_Clientes" />
         <Variable x:TypeArguments="x:String" Name="v_Registro" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="564,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;No se encontro el ACTA del cliente: &quot;+in_RazonSocial]" />
-      <ui:ReadCell WorkbookPathResource="{x:Null}" Cell="[&quot;T&quot;+in_NExcel.ToString]" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="564,120" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="REGISTRO" WorkbookPath="[In_rutaArchivoFactura]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="561.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;No se encontro el VALE del cliente: &quot;+in_RazonSocial]" />
+      <ui:ReadCell WorkbookPathResource="{x:Null}" Cell="[&quot;T&quot;+in_NExcel.ToString]" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="561.6,120" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="REGISTRO" WorkbookPath="[In_rutaArchivoFactura]">
         <ui:ReadCell.Result>
           <OutArgument x:TypeArguments="x:String">[v_Registro]</OutArgument>
         </ui:ReadCell.Result>
       </ui:ReadCell>
-      <Assign sap:VirtualizedContainerService.HintSize="564,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign sap:VirtualizedContainerService.HintSize="561.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[v_Registro]</OutArgument>
         </Assign.To>
@@ -146,23 +146,23 @@
           <InArgument x:TypeArguments="x:String">[If(String.IsNullOrEmpty(v_Registro), "", v_Registro)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:IfElseIfV2 Condition="[v_Registro.Contains(&quot;Falta VALE&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="564,1857.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_2">
+      <ui:IfElseIfV2 Condition="[v_Registro.Contains(&quot;Falta VALE&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="561.6,1842.4" sap2010:WorkflowViewState.IdRef="IfElseIfV2_2">
         <ui:IfElseIfV2.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="562,1265.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="560,1256" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="528,861.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="526.4,856" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="526,369.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="524.8,367.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,309.3333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:03">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="491.2,307.2" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:03">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -231,19 +231,19 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,225.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;No se logro Escribir en el Excel de Facturacion que falta el VALE&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;No se logro Escribir en el Excel de Facturacion que falta el VALE&quot;]" />
                     </Sequence>
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
               <TryCatch.Finally>
-                <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="526,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="524.8,89.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -252,26 +252,26 @@
                 </Sequence>
               </TryCatch.Finally>
             </TryCatch>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Como no se encontro el VALE se termino con el proceso&quot;]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;[FIN] Obtener VALE&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Como no se encontro el VALE se termino con el proceso&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;[FIN] Obtener VALE&quot;]" />
           </Sequence>
         </ui:IfElseIfV2.Else>
         <ui:IfElseIfV2.ElseIfs>
           <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
         </ui:IfElseIfV2.ElseIfs>
         <ui:IfElseIfV2.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="562,404" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="560,400" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Como no se encontro la Orden de Compra se termino con el proceso&quot;]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;[FIN] Obtener VALE&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Como no se encontro la Orden de Compra se termino con el proceso&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;[FIN] Obtener VALE&quot;]" />
           </Sequence>
         </ui:IfElseIfV2.Then>
       </ui:IfElseIfV2>
-      <Assign sap:VirtualizedContainerService.HintSize="564,108" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="561.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[out_SinVALE]</OutArgument>
         </Assign.To>

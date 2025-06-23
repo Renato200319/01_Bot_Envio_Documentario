@@ -109,7 +109,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_0_3_Encontrar_Transacción_Excel" sap:VirtualizedContainerService.HintSize="1199.6000000000001,2248.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_0_3_Encontrar_Transacción_Excel" sap:VirtualizedContainerService.HintSize="1199.6000000000001,2135.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Clientes" />
       <Variable x:TypeArguments="x:Int32" Name="v_contador" />
@@ -120,14 +120,6 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="584,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[INICIO] Encontrar ubicación de: &quot;+in_Pedido+&quot; . En el Excel de FACTURACIÓN&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="584,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[in_rutaArchivoFactura]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">C:\Users\hquispem\OneDrive - Primax - Corporativo\PRIMAX  DISTRIBUCION(GAS_LUBES) - GESTION DOCUMENTARIA\GESTION FACTURACION\2025\FACTURACION.xlsx</InArgument>
-      </Assign.Value>
-    </Assign>
     <Sequence DisplayName="Buscar la ubicación de la transacción en el Excel" sap:VirtualizedContainerService.HintSize="584,1937.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -1,0 +1,41 @@
+﻿{
+  "Version": "1.0",
+  "Metadata": [
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "https://ww2.todasmisfacturas.com.pe",
+        "IsExpression": false
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "notepad.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "excel.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": {
+        "Value": "in_rutaArchivoFactura",
+        "IsExpression": true
+      },
+      "Version": null
+    }
+  ]
+}

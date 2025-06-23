@@ -8,15 +8,15 @@
     "UiPath.IntegrationService.Activities": "[1.15.0]",
     "UiPath.Mail.Activities": "[2.1.10-preview]",
     "UiPath.PDF.Activities": "[3.22.1]",
-    "UiPath.System.Activities": "[25.4.4]",
+    "UiPath.System.Activities.Runtime": "[25.4.4]",
     "UiPath.Testing.Activities": "[24.10.4]",
-    "UiPath.UIAutomation.Activities": "[25.2.1-preview]"
+    "UiPath.UIAutomation.Activities.Runtime": "[25.2.1-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "25.0.161.0",
-  "projectVersion": "1.0.27",
+  "projectVersion": "1.0.43",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -33,7 +33,8 @@
     "readyForPiP": false,
     "startsInPiP": false,
     "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
+    "pipType": "ChildSession",
+    "robotVersion": "25.0.167"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -45,58 +46,69 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "arguments": {
+    "input": [
       {
-        "editingStatus": "InProgress",
-        "testCaseId": "d2d32749-bde0-42d7-8372-1292b5c77be2",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
+        "name": "in_OrchestratorQueueName",
+        "displayName": "in_OrchestratorQueueName",
+        "tooltip": "Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file.",
+        "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
       },
       {
-        "editingStatus": "InProgress",
-        "testCaseId": "42210b6d-3d97-45fd-afa2-a172c307acce",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
+        "name": "in_OrchestratorQueueFolder",
+        "displayName": "in_OrchestratorQueueFolder",
+        "tooltip": "Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file.",
+        "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
       },
       {
-        "editingStatus": "InProgress",
-        "testCaseId": "aaddd1d3-0c62-45cf-87f4-0dec2ae7caa0",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "f5d77e11-92ff-484c-9f1a-98d8ce5ad224",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\MainTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "e429451b-ae8d-4f6a-bac4-47e3a705182a",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\ProcessTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "56f5e5a4-068d-48ab-a445-8c168d19bf5c",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+        "name": "in_Reproceso",
+        "displayName": "in_Reproceso",
+        "type": "System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": true,
+        "defaultValue": "1"
       }
     ],
-    "saveToCloud": false
+    "output": []
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
       "uniqueId": "ac4290a7-2cb2-492c-8800-c5e347954697",
-      "input": [],
+      "input": [
+        {
+          "name": "in_OrchestratorQueueName",
+          "displayName": "in_OrchestratorQueueName",
+          "tooltip": "Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file.",
+          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_OrchestratorQueueFolder",
+          "displayName": "in_OrchestratorQueueFolder",
+          "tooltip": "Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file.",
+          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_Reproceso",
+          "displayName": "in_Reproceso",
+          "type": "System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": true,
+          "defaultValue": "1"
+        }
+      ],
       "output": []
     }
   ],
