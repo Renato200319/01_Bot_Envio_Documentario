@@ -1,4 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="probar" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="probar_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="probar" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_rutaDocumentos" Type="InArgument(scg:IEnumerable(x:String))" />
+  </x:Members>
+  <this:probar.in_rutaDocumentos>
+    <InArgument x:TypeArguments="scg:IEnumerable(x:String)" />
+  </this:probar.in_rutaDocumentos>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>probar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -43,6 +53,11 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,9 +120,11 @@
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="probar" sap:VirtualizedContainerService.HintSize="1198,828" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="probar" sap:VirtualizedContainerService.HintSize="1172,354.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="v_usarname" />
       <Variable x:TypeArguments="ss:SecureString" Name="v_contraseña" />
@@ -117,40 +134,25 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Credenciales_Carbajal" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="483.2,175.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[v_contraseña]" Username="[v_usarname]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Untitled - Notepad" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,629.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="0ce35fb2-c7b9-45b4-90b2-17fd5a82c5d1" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="449.6,339.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'RichEditD2DPT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,279.2" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="0ce35fb2-c7b9-45b4-90b2-17fd5a82c5d1" Text="[v_contraseña.ToString]" Version="V4">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable ContentHash="inM3lVk3CU6wwKhSsTzSBQ" DesignTimeRectangle="8, 91, 1922, 899" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;wnd cls='RichEditD2DPT' /&gt;" FuzzySelectorArgument="&lt;wnd cls='RichEditD2DPT' /&gt;" Guid="031ee170-f0ec-4f89-98e3-f6587bd03ad0" InformativeScreenshot="10e1fd0986c2e5161c30061aa93f8774.png" Reference="dHlVBlqNnU63xQsMqdfbMw/UKWXevMvN06RxHb6DcgeLQ" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionTypeIntoOptions.Retry>
-                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                </uix:VerifyExecutionTypeIntoOptions>
-              </uix:NTypeInto.VerifyOptions>
-            </uix:NTypeInto>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-9, -9, 1938, 1038" ContentHash="lvgsuK6ps0-mq6mm-GLAMA" FilePath="Microsoft.WindowsNotepad_8wekyb3d8bbwe!App" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATbSURBVFhHtdTbUxN3FAdwX3igyVPv/S9s+w+0o4JiKaBQC1UESqtFq6nWqG0x9jbjS594aPtUoE5nxHEqQQRNSEKI3CUQEsiNJORGLF4SlefTOb9lN/v7ZRd+S2BnvpOZ38LuJ+ecnF27OK4SQ8fuEkNHDD95zje6p3Ze1FVi6MiWGDoAP3nON7qndq7pMgXXdpuCa1lTcA2uBF7iw6R8v/gcvlt4DpcXctS50fsMLsxjnsK3nqfUvW9mH4PBvQpn3avU+emHj+DUNCaTbZvK8FcUcQhrD7yEH/wvQG/8U3oowi77cnDJlwW98Q/pXISd9zyBc3NPQCe7h7CzM6twZuY/0F3In5+azkDbVAa+mlzB8FcUYe3+FwSHFWt1xQiy8vYMXPLl4KIvC0ZvFpodEYKsuDUN5xE3J+CwYkdtIYIsvzlJYF8/xDyCekuAIPfeGIe2KQKDk5NpODGRBtahegkwASe2U4Rd9GbBSFr5jFSMVE0Gk7dTDjsttJJUTKzaScyEgPtyPMUPZGHYTgJj5kxs57lZASeHiTjZnMnbScG+wIwl+YHyORNgdNWwnTTsMTVnIoyuWiGM4MaS0DqWhM9HE/xAtXayc2bgaic9ZycmRFiKwFpHBVzLAw1AFrbZnElV45gzsZ1i1VpGE9D8IA7Nrjg/cOM5U27nZnPGthNhLeuwJtcyHB9Z5gcqtfOdn/6mlmwxefNqN6lakwzXOBLjByrNGfuSYiOHHXPG4NhwlB+oNGdv/7iNFTR1EVgjwpxRODochc+GI/zA7Zoz4ddJz9lxCRYjMIJzRKDBoQEoXxuq+0xlbVAwhTkT2ymHNdiXoN6+xA9U3mcqa0Nhn4lrQw6j2snAPrWF4YgtzA/kaafSPlNvZ37OBJwIW8cNheGToRA/UAn21tXugmHfal43dUlVQximzhrkByrNGfuSYiOH1VowAX5gwZyNp7a3glc6CUzEHbYE4NB9DcCtzRm7NpTnrM6arxrCDt9HnB9q7vn5gar7TGVtsPsMYfJfp1I75bDqe4tQPbjID+RZGxvtMxF2ZBMYwQ0uQtXgInw8sMAPVGtnwT5TXRt5GDtnUtXWYVUDCwRXedfHD2RhOGdvmLoKhn2rea29E6oG87CPMP1efqDSnLEvKTaVAz4B1++Dg/1eqLijAUi1c33OtrOCr7b/RaqGMAE3DwfuzPMD+eZMeW1sNmdiO+Ww/X0e2G/28AN51gYLU1ob0pxJ7aRhBxDW54FyswfKzHP8QLW1sdk+Y9eG0pwRXJ9QNYSVm+egrHcO9vXO8gNZmJa1gTB5O9k5E9sph+29jXHzA5sckW2fM9JOBraPwGZhz79uOGjWUMG7E25otIs4rXOWb6fSnMmrhjCC63VDj83FD/R4PDAyMgJOpxMcDgcVu92uGJvNJmVoaIiK1WqVYrFYqOB9fK7LpQEYC/khHo9DLBaTEo1GpUQiESlLS0tSwuEwlVAoJCUYDCoG/478r1/Dov61/n1IRMOQyWRgZWVFSjqdppJKpaQkk0kpiUSCCn5ZMcvLy1Lwi+NnJLgA1xre4wf+VlYKv3xYCj9/sPPB91zbUwq/V7zCD7xeo8t1V+ugs2rng++5XqODfw7pcqxD9bpVp3+3p1afvVGrh51OT60ebtbps/hO1oHX/wYkkKFmGGqmAAAAAElFTkSuQmCC" InformativeScreenshot="e553f8a78d152bb74a4aa9f620397faa.png" Reference="dHlVBlqNnU63xQsMqdfbMw/x7ckOOSXRkO_caffbEyG-Q" Selector="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" Version="V2" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[in_rutaDocumentos]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" xml:space="preserve">[Directory.GetFiles("C:\Users\hquispem\OneDrive - Primax - Corporativo\PRIMAX  DISTRIBUCION(GAS_LUBES) - GESTION DOCUMENTARIA\DOCUMENTOS FACTURACION\BANCO DE CREDITO DEL PERU\14-06-2025\3288428", "*.*").ToList()]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:SendOutlookMail Bcc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="facturacionprimaxgas@primax.com" AttachmentsCollection="[in_rutaDocumentos]" Body="Estimado(a), buen día." Cc="CSanchezP@primax.com" ConnectionMode="LegacyConfiguration" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="433.6,217.6" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" SentOnBehalfOfName="facturacionprimaxgas@primax.com" Subject="20554545743 - CORPORACION PRIMAX " To="ASantamariaG@primax.com" UseISConnection="False">
+      <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+        <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+      <ui:SendOutlookMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+      </ui:SendOutlookMail.Files>
+    </ui:SendOutlookMail>
   </Sequence>
 </Activity>
