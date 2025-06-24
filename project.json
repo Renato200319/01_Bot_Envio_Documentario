@@ -79,6 +79,7 @@
     "output": []
   },
   "expressionLanguage": "VisualBasic",
+  "modernDesignExperience": true,
   "entryPoints": [
     {
       "filePath": "Main.xaml",
