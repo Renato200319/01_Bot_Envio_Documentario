@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1198,16237.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1172,16237.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="v_docPDF" />
       <Variable x:TypeArguments="x:Boolean" Name="v_docXML" />
@@ -129,6 +129,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="v_GRdocPDF" />
       <Variable x:TypeArguments="x:Boolean" Name="v_GRdocXML" />
       <Variable x:TypeArguments="x:Int32" Name="v_NoPosicionExcel" />
+      <Variable x:TypeArguments="x:String" Name="v_OC" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1028,6 +1029,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_fecha">[DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "M/d/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="in_NExcel">[v_NoPosicionExcel]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_TipoEnvio">[in_TransactionItem.SpecificContent("Tipo Envio").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_rutaPDF">[in_Config("RutaCarp_Factura").ToString+in_TransactionItem.SpecificContent("Razon Social").ToString+"\"+DateTime.ParseExact(in_TransactionItem.SpecificContent("Fecha Inicial").ToString(), "M/d/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy")+"\"+in_TransactionItem.SpecificContent("No Pedido").ToString+"\"+"PDF - "+in_TransactionItem.SpecificContent("No Serie").ToString+" - "+in_TransactionItem.SpecificContent("No Correlativo").ToString+".pdf"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
